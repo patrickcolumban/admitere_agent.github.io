@@ -368,7 +368,7 @@ h1, h2, h3, h4, h5 {
 
 .sim-grid {
   display: grid;
-  grid-template-columns: 310px 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 1.5rem;
   align-items: start;
 }
@@ -442,18 +442,20 @@ h1, h2, h3, h4, h5 {
 
 .q-jumper-row {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.25rem;
   flex-wrap: wrap;
   margin-bottom: 1.2rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  max-height: 160px;
+  overflow-y: auto;
 }
 
 .q-dot {
-  width: 26px;
-  height: 26px;
+  width: 25px;
+  height: 25px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
@@ -731,25 +733,25 @@ h1, h2, h3, h4, h5 {
 
   <nav class="header-nav" id="navTabs">
     <button class="tab-btn active" data-target="viewCockpit">
-      <span class="tab-code">01</span> Cockpit
+      <span class="tab-code">SYS</span> Cockpit
     </button>
     <button class="tab-btn" data-target="viewElig">
-      <span class="tab-code">02</span> Eligibilitate
+      <span class="tab-code">CRIT</span> Eligibilitate
     </button>
     <button class="tab-btn" data-target="viewRoadmap">
-      <span class="tab-code">03</span> Faze Selecție
+      <span class="tab-code">ROAD</span> Faze Selecție
     </button>
     <button class="tab-btn" data-target="viewSimulator">
-      <span class="tab-code">04</span> Simulatoare Teste
+      <span class="tab-code">TEST</span> Simulatoare Teste
     </button>
     <button class="tab-btn" data-target="viewDosar">
-      <span class="tab-code">05</span> Pachet Dosar
+      <span class="tab-code">DOCS</span> Pachet Dosar
     </button>
     <button class="tab-btn" data-target="viewPrograms">
-      <span class="tab-code">06</span> Programe ANIMV
+      <span class="tab-code">PROG</span> Programe ANIMV
     </button>
     <button class="tab-btn" data-target="viewResources">
-      <span class="tab-code">07</span> Ghid & FAQ
+      <span class="tab-code">INFO</span> Ghid & FAQ
     </button>
   </nav>
 </header>
@@ -763,8 +765,8 @@ h1, h2, h3, h4, h5 {
           <span class="badge-tag">PROTOCOL OFICIAL ADMITERE</span>
           <h2 class="banner-title">DRUMUL SPRE OFIȚER DE INTELLIGENCE</h2>
           <p class="banner-desc">
-            Platformă integrată destinată elevilor de clasa a XII-a din colegiile naționale militare și liceele civile. 
-            Include simulatoare calibrate pe cele două specializări principale: Operațiuni de Intelligence (Track E) și Studii de Securitate (Track F).
+            Platformă integrată destinată elevilor din colegiile naționale militare și liceele civile. 
+            Include acum probele scrise oficiale ANIMV: Track E (Operațiuni de Intelligence), Track F (Proba de Cultură Generală) și Track G (Studii de Securitate - DeepSeek).
           </p>
         </div>
         <div class="cockpit-actions">
@@ -782,14 +784,14 @@ h1, h2, h3, h4, h5 {
           <div>
             <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-family:var(--font-mono);">
               <span>Criterii Eligibilitate</span>
-              <span id="cockpitEligText">0 / 8 Validate</span>
+              <span id="cockpitEligText">Inițiere</span>
             </div>
             <div class="result-bar"><div class="result-fill" id="cockpitEligBar"></div></div>
           </div>
           <div>
             <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-family:var(--font-mono);">
               <span>Documente Dosar</span>
-              <span id="cockpitDocsText">0 / 9 Pregătite</span>
+              <span id="cockpitDocsText">Pregătire</span>
             </div>
             <div class="result-bar"><div class="result-fill" id="cockpitDocsBar"></div></div>
           </div>
@@ -834,8 +836,8 @@ h1, h2, h3, h4, h5 {
       </div>
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem; font-size:0.9rem; color:var(--text-muted);">
         <div>
-          <strong style="color:#fff; display:block; margin-bottom:0.2rem;">• Probele de Aptitudini (Track E & F)</strong>
-          Examenul solicită analiză de profil psihocomportamental (HUMINT) și sinteze analitice din surse deschise (OSINT) redactate conform cerințelor de concizie ale serviciului.
+          <strong style="color:#fff; display:block; margin-bottom:0.2rem;">• Proba de Cultură Generală (Track F)</strong>
+          Testul oficial verifică temeinic gramatica română, literatura, psihologia, istoria, logica, economia și matematica aplicată.
         </div>
         <div>
           <strong style="color:#fff; display:block; margin-bottom:0.2rem;">• Raportul Ierarhic</strong>
@@ -843,7 +845,7 @@ h1, h2, h3, h4, h5 {
         </div>
         <div>
           <strong style="color:#fff; display:block; margin-bottom:0.2rem;">• Traseul Aplicativ ANIMV</strong>
-          Circuitul de 11 elemente pune accent pe agilitate și explozie. Folosește calculatorul din Track D pentru a-ți converti timpii în notă.
+          Circuitul de elemente tehnice pune accent pe agilitate și explozie. Folosește calculatorul din Track D pentru a-ți converti timpii în notă.
         </div>
       </div>
     </div>
@@ -852,7 +854,7 @@ h1, h2, h3, h4, h5 {
   <section id="viewElig" class="view-window">
     <div class="window-head">
       <div>
-        <h2>[02] Criterii de Eligibilitate</h2>
+        <h2>Criterii de Eligibilitate</h2>
         <p>Validează condițiile legale și cerințele specifice stabilite de Serviciul Român de Informații.</p>
       </div>
       <button class="btn btn-outline" onclick="resetChecklist('elig')">Resetează</button>
@@ -870,7 +872,7 @@ h1, h2, h3, h4, h5 {
   <section id="viewRoadmap" class="view-window">
     <div class="window-head">
       <div>
-        <h2>[03] Filtrele Eliminatorii de Selecție</h2>
+        <h2>Filtrele Eliminatorii de Selecție</h2>
         <p>Etapele parcurse de candidați pe parcursul procesului de recrutare. Respingerea la oricare dintre etape este definitivă pentru sesiunea în curs.</p>
       </div>
     </div>
@@ -881,8 +883,8 @@ h1, h2, h3, h4, h5 {
   <section id="viewSimulator" class="view-window">
     <div class="window-head">
       <div>
-        <h2>[04] Baterie de Testare & Simulare Proba Scrisă</h2>
-        <p>Exersează pe baterii de întrebări calibrate pe structura oficială ANIMV: logică formală, legislație, engleză, bareme fizice și subiectele oficiale de aptitudini 2025.</p>
+        <h2>Baterie de Testare & Simulare Proba Scrisă</h2>
+        <p>Exersează pe baterii de întrebări calibrate pe structura oficială ANIMV: logică formală, legislație, engleză, bareme fizice și toate probele oficiale.</p>
       </div>
     </div>
 
@@ -890,15 +892,15 @@ h1, h2, h3, h4, h5 {
       <div class="track-selector">
         <div class="track-btn active" data-track="logic" onclick="selectTrack('logic')">
           <h4>TRACK A: RAȚIONAMENT LOGIC</h4>
-          <span>20 Întrebări · Silogisme & Diagnoză</span>
+          <span>Silogisme & Diagnoză</span>
         </div>
         <div class="track-btn" data-track="general" onclick="selectTrack('general')">
           <h4>TRACK B: SECURITATE & CONSTITUȚIE</h4>
-          <span>20 Întrebări · Legislație, NATO, UE</span>
+          <span>Legislație, NATO, UE</span>
         </div>
         <div class="track-btn" data-track="english" onclick="selectTrack('english')">
           <h4>TRACK C: LIMBA ENGLEZĂ (ANIMV)</h4>
-          <span>20 Întrebări · Modele Oficiale</span>
+          <span>Modele Oficiale</span>
         </div>
         <div class="track-btn" data-track="physical" onclick="selectTrack('physical')">
           <h4>TRACK D: CIRCUIT MILITAR & CALCULATOR</h4>
@@ -906,11 +908,15 @@ h1, h2, h3, h4, h5 {
         </div>
         <div class="track-btn" data-track="aptitudini_v1" onclick="selectTrack('aptitudini_v1')" style="border-left: 3px solid var(--cyan);">
           <h4 style="color:var(--cyan);">TRACK E: OPERAȚIUNI DE INTELLIGENCE</h4>
-          <span>Proba Scrisă 2025 · Varianta 1 (Green'n Eco)</span>
+          <span>Proba Scrisă · Varianta A (Green'n Eco)</span>
+        </div>
+        <div class="track-btn" data-track="cultura_generala" onclick="selectTrack('cultura_generala')" style="border-left: 3px solid var(--emerald);">
+          <h4 style="color:var(--emerald);">TRACK F: PROBA CULTURĂ GENERALĂ</h4>
+          <span>Test Oficial ANIMV · Varianta B</span>
         </div>
         <div class="track-btn" data-track="aptitudini_v3" onclick="selectTrack('aptitudini_v3')" style="border-left: 3px solid var(--gold);">
-          <h4 style="color:var(--gold);">TRACK F: STUDII DE SECURITATE</h4>
-          <span>Proba Scrisă 2025 · Varianta 3 (DeepSeek)</span>
+          <h4 style="color:var(--gold);">TRACK G: STUDII DE SECURITATE</h4>
+          <span>Proba Scrisă · Varianta C (DeepSeek)</span>
         </div>
       </div>
 
@@ -921,7 +927,7 @@ h1, h2, h3, h4, h5 {
   <section id="viewDosar" class="view-window">
     <div class="window-head">
       <div>
-        <h2>[05] Pachetul Documentar pentru Dosar</h2>
+        <h2>Pachetul Documentar pentru Dosar</h2>
         <p>Inventarul documentelor solicitate la înscrierea oficială.</p>
       </div>
       <button class="btn btn-outline" onclick="resetChecklist('docs')">Resetează</button>
@@ -939,7 +945,7 @@ h1, h2, h3, h4, h5 {
   <section id="viewPrograms" class="view-window">
     <div class="window-head">
       <div>
-        <h2>[06] Specializări Universitare & Tehnice</h2>
+        <h2>Specializări Universitare & Tehnice</h2>
         <p>Programele de formare a viitorilor ofițeri în cadrul ANIMV și prin parteneriate civile.</p>
       </div>
     </div>
@@ -950,7 +956,7 @@ h1, h2, h3, h4, h5 {
   <section id="viewResources" class="view-window">
     <div class="window-head">
       <div>
-        <h2>[07] Resurse Oficiale & Clarificări</h2>
+        <h2>Resurse Oficiale & Clarificări</h2>
         <p>Legături directe și răspunsuri pentru întrebările frecvente ale liceenilor militari.</p>
       </div>
     </div>
@@ -985,17 +991,17 @@ const ELIGIBILITY_DATA = [
   { id: "repetentie", title: "Fără ani de liceu repetați din motive imputabile", note: "Excepție fac cazurile documentate medical conform reglementărilor.", tag: "PARCURS ȘCOLAR" },
   { id: "penal", title: "Fără antecedente penale sau calitatea de inculpat", note: "Se atestă prin cazier judiciar și verificări detaliate de securitate.", tag: "INTEGRITATE" },
   { id: "medicalApt", title: "Apt medical și psihologic conform baremelor speciale", note: "Examinare realizată în rețeaua spitalelor militare autorizate.", tag: "BAREM MEDICAL" },
-  { id: "angajament", title: "Disponibilitate de a semna angajamentul militar (10 ani)", note: "Contractul de serviciu ca ofițer asumat de fiecare absolvent după finalizarea studiilor.", tag: "STATUT CADRU" }
+  { id: "angajament", title: "Disponibilitate de a semna angajamentul militar (zece ani)", note: "Contractul de serviciu ca ofițer asumat de fiecare absolvent după finalizarea studiilor.", tag: "STATUT CADRU" }
 ];
 
 const ROADMAP_PHASES = [
-  { step: "01", title: "Depunerea Dosarului & Trierea Preliminară", desc: "Transmiterea candidaturii la direcția de informații arondată. Comisia verifică conformitatea primară a actelor.", status: "ELIMINATORIU" },
-  { step: "02", title: "Interviul Inițial de Selecție", desc: "Discuție structurată cu specialiști de resurse umane axată pe motivație, etică și maturitate.", status: "ELIMINATORIU" },
-  { step: "03", title: "Evaluare Psihologică & Aptitudini Cognitive", desc: "Baterii de teste de viteză de reacție, raționament logic, atenție distributivă și chestionare de personalitate.", status: "CRITIC" },
-  { step: "04", title: "Proba Fizică (Traseul Militar Aplicativ)", desc: "Circuit tehnic compus din elemente de îndemânare, forță, sărituri și sprint cronometrat.", status: "BAREM OBLIGATORIU" },
-  { step: "05", title: "Examinarea Medicală Detaliată", desc: "Examen clinic amănunțit în spitalele militare, conform baremelor specifice cadrelor active.", status: "ELIMINATORIU" },
-  { step: "06", title: "Verificările de Securitate Națională (HG 585/2002)", desc: "Procedură legală pentru eliberarea avizului de acces la informații secrete de stat.", status: "AVIZ STRICT" },
-  { step: "07", title: "Examenul Scris de Admitere la ANIMV", desc: "Probe scrise de cunoștințe (limbă străină, gândire critică / română) și ierarhizarea finală a candidaților.", status: "DEPARTAJARE" }
+  { step: "A", title: "Depunerea Dosarului & Trierea Preliminară", desc: "Transmiterea candidaturii la direcția de informații arondată. Comisia verifică conformitatea primară a actelor.", status: "ELIMINATORIU" },
+  { step: "B", title: "Interviul Inițial de Selecție", desc: "Discuție structurată cu specialiști de resurse umane axată pe motivație, etică și maturitate.", status: "ELIMINATORIU" },
+  { step: "C", title: "Evaluare Psihologică & Aptitudini Cognitive", desc: "Baterii de teste de viteză de reacție, raționament logic, atenție distributivă și chestionare de personalitate.", status: "CRITIC" },
+  { step: "D", title: "Proba Fizică (Traseul Militar Aplicativ)", desc: "Circuit tehnic compus din elemente de îndemânare, forță, sărituri și sprint cronometrat.", status: "BAREM OBLIGATORIU" },
+  { step: "E", title: "Examinarea Medicală Detaliată", desc: "Examen clinic amănunțit în spitalele militare, conform baremelor specifice cadrelor active.", status: "ELIMINATORIU" },
+  { step: "F", title: "Verificările de Securitate Națională (HG 585/2002)", desc: "Procedură legală pentru eliberarea avizului de acces la informații secrete de stat.", status: "AVIZ STRICT" },
+  { step: "G", title: "Examenul Scris de Admitere la ANIMV", desc: "Probe scrise de cunoștințe (limbă străină, gândire critică / română) și ierarhizarea finală a candidaților.", status: "DEPARTAJARE" }
 ];
 
 const DOSAR_ITEMS = [
@@ -1003,7 +1009,7 @@ const DOSAR_ITEMS = [
   { id: "ci", title: "Copie conformă după cartea de identitate" },
   { id: "cert_nastere", title: "Copie după certificatul de naștere" },
   { id: "adeverinta_elev", title: "Adeverință de elev clasa a XII-a (sau Diplomă Bacalaureat)" },
-  { id: "foaie_matricola", title: "Foaie matricolă clasele IX-XI și sem. I clasa a XII-a (cu medii purtare)" },
+  { id: "foaie_matricola", title: "Foaie matricolă clasele IX-XI și semestrul inițial clasa a XII-a (cu medii purtare)" },
   { id: "cazier", title: "Certificat de cazier judiciar (fără înscrisuri)" },
   { id: "fisa_medicala", title: "Fișă medicală tip eliberată de centrele militare" },
   { id: "cv_europass", title: "Curriculum Vitae în format Europass" },
@@ -1017,120 +1023,226 @@ const PROGRAMS_DATA = [
   { type: "ȘCOALĂ POSTLICEALĂ", title: "Comunicații & Tehnologie Specială", desc: "Traseu aplicat pentru exploatarea și mentenanța aparaturii speciale de transmisiuni.", durata: "2 ani", grad: "Sergent / Maistru Militar", limba: "Română" }
 ];
 
-/* TRACK E: DOSAR OPERAȚIUNI DE INTELLIGENCE (VARIANTA 1) */
+/* TRACK E DOSSIER */
 const TRACK_E_DOSSIER = {
   text1: {
     title: "Subiectul I: Analiză Profil Organizația „Green'n Eco” (7 Membri)",
-    content: "Organizația „Green'n Eco”, fondată în 2020, numără peste 150 de membri activi dedicați ecologiei urbane[cite: 3]. Sediul are panouri solare și mobilier reciclat[cite: 3]. Dintre membri se remarcă șapte elevi: Andrei, Maria, Radu, Elena, Alex, Ioana și Mihai, fiecare candidând pentru coordonarea aplicației 'Managementul resurselor regenerabile'[cite: 3].\n\n" +
+    content: "Organizația „Green'n Eco” numără peste 150 de membri activi dedicați ecologiei urbane[cite: 3]. Sediul are panouri solare și mobilier reciclat[cite: 3]. Dintre membri se remarcă șapte elevi: Andrei, Maria, Radu, Elena, Alex, Ioana și Mihai, fiecare candidând pentru coordonarea aplicației 'Managementul resurselor regenerabile'[cite: 3].\n\n" +
       "• Andrei: Supervizează 'Reziliență Comunitară' și 'Harta verde'[cite: 3]. Negociază eficient cu primăriile, dar a dezvoltat o atitudine ostilă și sarcastică față de autorități și părinți, reducându-și implicarea[cite: 3].\n" +
       "• Maria: Conduce 'Eco-Familii' și 'Grădinile memoriei'[cite: 3]. Foarte empatică, dar a dezvoltat un atașament emoțional obsesiv față de beneficiari, ajungând să mintă despre timpul acordat și să neglijeze școala[cite: 3].\n" +
       "• Radu: Conduce 'Eco-Aventura' și 'Teatrul Verde' pentru copii[cite: 3]. Rebel sistematic față de autoritate, acuză școala și părinții de ipocrizie, refuzând evenimentele de familie[cite: 3].\n" +
       "• Elena: Conduce 'Laboratorul de sustenabilitate', întocmește bugete de carbon și optimizează rute[cite: 3]. Ea a inițiat ideea aplicației 'Managementul resurselor regenerabile'[cite: 3]. Este extrem de perfecționistă, dar recunoaște și își gestionează inflexibilitatea prin sport[cite: 3].\n" +
       "• Alex: Conduce 'Laboratorul de inovație verde' (proiectul 'Urban 2050')[cite: 3]. Foarte riguros științific, dar elitist și arogant cu cei din domenii umaniste[cite: 3].\n" +
       "• Ioana: Conduce 'Creativitate și comunicare verde', pictând murale ecologice[cite: 3]. Respinge orice formă de autoritate și critică agresiv ceea ce consideră 'mainstream' sau 'greenwashing'[cite: 3].\n" +
-      "• Mihai: Coordonează 'Cercul de inovație pentru tehnologii verzi' (aplicația 'EcoTrackerCity')[cite: 3]. Competent tehnic, dar arogant față de 'generația analogică', nerăbdător și izolat social, ignorând nevoile umane reale[cite: 3]."
+      "• Mihai: Coordonează 'Cercul de inovație pentru tehnologii verzi' (aplicația 'EcoTrackerCity')[cite: 3]. Competent tehnic, dar arogant față de generația analogică, nerăbdător și izolat social, ignorând nevoile umane reale[cite: 3]."
   },
   text2: {
     title: "Subiectul II: Text Documentar – Social Media și Sănătatea Mintală a Adolescenților",
     content: "Un studiu OMS realizat în 44 de țări arată că România are cel mai mare procent de adolescenți care folosesc excesiv rețelele sociale[cite: 3]. În școli, telefoanele mobile au fost interzise[cite: 3]. Cercetările recente nuanțează dezbaterea[cite: 3]:\n\n" +
-      "1. Nu există o legătură de cauzalitate directă demonstrată: Psihologii Candice Odgers și Doris Rogobete subliniază că social media nu cauzează direct tulburări psihice, ci acționează ca un catalizator pentru vulnerabilități preexistente sau ca refugiu pentru tinerii deja deprimați[cite: 3].\n" +
-      "2. Riscuri reale documentate: Dependența (cauzată de nevoia de validare instantanee), deficitul de atenție (atenție distributivă superficială) și cyberbullying-ul (cu efecte pe termen lung, fetele fiind cu 12% mai expuse)[cite: 3].\n" +
-      "3. Eul virtual: Mihnea Măruță explică ruperea dintre identitatea reală și cea online, rețeaua devenind o instanță morală rigidă ce concurează cu familia și școala[cite: 3].\n" +
-      "4. Valențe pozitive: Grupuri de suport emoțional pentru tineri vulnerabili, conectare în perioade de izolare, acces rapid la educație și conținut de calitate[cite: 3]."
+      "• Fără legătură de cauzalitate directă demonstrată: Psihologii Candice Odgers și Doris Rogobete subliniază că social media nu cauzează direct tulburări psihice, ci acționează ca un catalizator pentru vulnerabilități preexistente sau ca refugiu pentru tinerii deja deprimați[cite: 3].\n" +
+      "• Riscuri reale documentate: Dependența (cauzată de nevoia de validare instantanee), deficitul de atenție (atenție distributivă superficială) și cyberbullying-ul (cu efecte pe termen lung, fetele fiind mai expuse)[cite: 3].\n" +
+      "• Eul virtual: Mihnea Măruță explică ruperea dintre identitatea reală și cea online, rețeaua devenind o instanță morală rigidă ce concurează cu familia și școala[cite: 3].\n" +
+      "• Valențe pozitive: Grupuri de suport emoțional pentru tineri vulnerabili, conectare în perioade de izolare, acces rapid la educație și conținut de calitate[cite: 3]."
   }
 };
 
-/* TRACK F: DOSAR STUDII DE SECURITATE (VARIANTA 3) */
-const TRACK_F_DOSSIER = {
+/* TRACK G (DEEPSEEK) DOSSIER */
+const TRACK_G_DOSSIER = {
   info1: {
-    title: "Informația 1: Acuzațiile SUA & Lanțul de Microcipuri",
+    title: "Document A: Acuzațiile SUA & Lanțul de Microcipuri",
     content: "DeepSeek a devenit dintr-un concurent un inamic strategic al SUA[cite: 2]. Departamentul de Stat acuză că DeepSeek sprijină operațiunile militare ale armatei chineze (PLA) și utilizează companii-fantomă în Singapore și Malaezia pentru a eluda controalele de export și a accesa cipuri Nvidia H100/H800[cite: 2]. Interesul strategic este strâns legat și de Taiwan, producător a peste 90% din cipurile avansate[cite: 2]. Numele DeepSeek apare de peste 150 de ori în registrele de achiziții ale PLA[cite: 2]. Proiectul de lege 'No Adversarial AI Act' a fost introdus în Congresul SUA de deputații Moolenaar și Krishnamoorthi[cite: 2]."
   },
   info2: {
-    title: "Informația 2: Intervențiile Autorităților Europene (Germania & Italia)",
-    content: "Comisarul german Meike Kamp a solicitat blocarea aplicației DeepSeek pe Google și Apple pentru utilizare de 'conținut ilegal' și lipsa garanțiilor că datele utilizatorilor sunt protejate conform standardelor UE, în contextul în care legea chineză obligă companiile să predea date guvernului[cite: 2]. Italia a ordonat deja oprirea procesării datelor încă din 29 ianuarie 2025[cite: 2]. Rapoarte din justiția americană arată că datele circulau prin servere asociate gigantului China Mobile[cite: 2]."
+    title: "Document B: Intervențiile Autorităților Europene (Germania & Italia)",
+    content: "Comisarul german Meike Kamp a solicitat blocarea aplicației DeepSeek pe Google și Apple pentru utilizare de 'conținut ilegal' și lipsa garanțiilor că datele utilizatorilor sunt protejate conform standardelor UE, în contextul în care legea chineză obligă companiile să predea date guvernului[cite: 2]. Italia a ordonat deja oprirea procesării datelor[cite: 2]. Rapoarte din justiția americană arată că datele circulau prin servere asociate gigantului China Mobile[cite: 2]."
   },
   info3: {
-    title: "Informația 3: Investigarea Furtului de Proprietate Intelectuală (Microsoft & OpenAI)",
+    title: "Document C: Investigarea Furtului de Proprietate Intelectuală (Microsoft & OpenAI)",
     content: "Cercetătorii Microsoft au constatat extrageri neautorizate de date prin API-ul OpenAI de către entități legate de DeepSeek[cite: 2]. David Sacks (Casa Albă) a confirmat existența unor dovezi substanțiale privind 'distilarea' cunoștințelor din modelele OpenAI către DeepSeek pentru obținerea de performanțe ridicate la costuri reduse[cite: 2]."
   },
   info4: {
-    title: "Informația 4: Lansarea Modelului R1 & Impactul pe Piețe",
-    content: "Lansat discret pe Hugging Face pe 20 ianuarie 2025, modelul DeepSeek R1 a egalat performanțele OpenAI la o fracțiune din costuri, reducând halucinațiile IA și punând presiune pe cotațiile companiilor tech americane (inclusiv Nvidia)[cite: 2]. CEO-ul Nvidia, Jensen Huang, a confirmat reziliența tehnologică a Chinei[cite: 2]."
+    title: "Document D: Lansarea Modelului R1 & Impactul pe Piețe",
+    content: "Lansat discret pe Hugging Face, modelul DeepSeek R1 a egalat performanțele OpenAI la o fracțiune din costuri, reducând halucinațiile IA și punând presiune pe cotațiile companiilor tech americane (inclusiv Nvidia)[cite: 2]. CEO-ul Nvidia, Jensen Huang, a confirmat reziliența tehnologică a Chinei[cite: 2]."
   },
   info5: {
-    title: "Informația 5: Sancțiunile din Coreea de Sud",
-    content: "Agenția sud-coreeană pentru protecția datelor a suspendat aplicația la 17 februarie 2025, constatând că datele și mesajele utilizatorilor fuseseră transferate fără consimțământ către compania chineză Volcano Engine încă din 15 ianuarie 2025[cite: 2]."
+    title: "Document E: Sancțiunile din Coreea de Sud",
+    content: "Agenția sud-coreeană pentru protecția datelor a suspendat aplicația, constatând că datele și mesajele utilizatorilor fuseseră transferate fără consimțământ către compania chineză Volcano Engine[cite: 2]."
   }
 };
 
+/* RAW OFFICIAL TEST DATA: TRACK F (CULTURĂ GENERALĂ) */
+const OFFICIAL_CULTURA_RAW = [
+  { id: 1, chapter: "Gramatică", q: "Sunt corect despărțite în silabe toate cuvintele din seria:", options: ["func-ti-e, in-a-mic, ma-chi-aj, co-ni-ac", "fun-cți-e, i-na-mic, ma-chiaj, co-ni-ac", "func-ți-e, in-a-mic, ma-chi-aj, co-niac", "func-ți-e, in-a-mic, ma-chiaj, co-ni-ac"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 2, chapter: "Ortografie", q: "Sunt scrise corect toate cuvintele din seria:", options: ["Istambul, weekendul, acquisul, linkul", "Istanbul, weekendul, acquis-ul, linkul", "Istanbul, weekend-ul, acquis-ul, link-ul", "Istanbul, weekendul, acquisul, link-ul"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 3, chapter: "Silabație", q: "Conține numai cuvinte corect despărțite în silabe seria:", options: ["i-na-dec-vat, as-tro-nom, nă-dej-de, fii-că", "su-be-va-lu-at, ia-nua-ri-e, vre-un, dic-ți-o-nar", "bi-bli-o-te-că, as-cu-ți-tun-ghic, i-ne-chi-ta-bil, a-stfel", "post-tra-u-ma-tic, trau-ma-tic, in-e-gal, fiind-că"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 4, chapter: "Punctuație", q: "Se pune virgulă întotdeauna:", options: ["înaintea conjuncțiilor adversative dar, iar", "înaintea conjuncției coordonatoare copulative și", "între subiect și predicat", "între verbul predicat și complementul direct"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 5, chapter: "Sintaxă", q: "În enunțul 'I-am spus fetei aceea să nu mai mă sune de cât atunci când o va ierta pe cunoștiința mea, Ionela, și când se va merita să îi răspund', sunt:", options: ["trei greșeli", "patru greșeli", "cinci greșeli", "șase greșeli"], correct: 2, explain: "Barem oficial ANIMV: Varianta c (cinci greșeli)." },
+  { id: 6, chapter: "Sintaxă", q: "În enunțul 'Nu fii nepoliticos cu cei la care ți, propuneți să fi mereu generos și respectos!' sunt:", options: ["trei greșeli", "patru greșeli", "cinci greșeli", "șase greșeli"], correct: 2, explain: "Barem oficial ANIMV: Varianta c (cinci greșeli)." },
+  { id: 7, chapter: "Ortografie", q: "Sunt corect scrise abrevierile din seria:", options: ["dl, dna, dr., ONU, TAROM", "dl., d-na, dr., ONU, T.A.ROM", "dl., dna., dr., ONU, TA.ROM", "dl., dna., dr, O.N.U., TAROM"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 8, chapter: "Ortografie", q: "Sunt corect scrise toate formele din seria:", options: ["vizavi, merci, angro, aisberg", "vis-à-vis, mersi, engros, iceberg", "vizavi, mersi, angro, aisberg", "vis-à-vis, merci, engros, iceberg"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 9, chapter: "Ortografie", q: "Enunțul corect este:", options: ["Cozonacul este bine-crescut.", "Copilul binecrescut a fost apreciat.", "Copilul bine-crescut a fost apreciat.", "Cozonacul este binecrescut."], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 10, chapter: "Morfologie", q: "Sunt corecte toate formele de mai mult ca perfect pentru persoana inițială la plural:", options: ["citirăm, lucrasem, văzuserăm, ne duserăm", "citiserăm, lucraserăm, văzuserăm, ne duseserăm", "citiserăm, lucrasem, văzuserăm, ne duserăm", "citiserăm, lucraserăm, văzuserăm, ne duserăm"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 11, chapter: "Ortografie", q: "Sunt corecte toate cuvintele din seria:", options: ["boșdeucă, delincvent, reticent, somptos", "bojdeucă, delicvent, reticient, somptuos", "bojdeucă, delincvent, reticent, somptuos", "bojdeucă, delicvent, reticent, somptos"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 12, chapter: "Accent", q: "Sunt corect accentuate cuvintele:", options: ["bútelia, cércei, doctoríță, fírav", "butélia, cercéi, doctóriță, fìrav", "butelía, cercéi, doctoríță, firáv", "butelía, cércei, doctóriță, firáv"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 13, chapter: "Exprimare", q: "Enunțul formulat greșit apare în varianta:", options: ["Repet încă o dată cerința exercițiului.", "Am cumpărat două kilograme de căpșuni.", "Au folosit vopseluri variate.", "Dragile mele colege au absentat nemotivat."], correct: 0, explain: "Barem oficial ANIMV: Varianta a (pleonasm: a repeta încă o dată)." },
+  { id: 14, chapter: "Gramatică", q: "Este corect enunțul:", options: ["Elevul a cărui performanțe au fost recunoscute a fost premiat.", "Proiectele a căror finanțări au fost obținute vor fi derulate începând din luna martie.", "Am vizitat străzile ale căror clădiri fac parte din patrimoniul internațional.", "Am văzut copilul al cărui mamă plângea."], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 15, chapter: "Plural", q: "Sunt corecte formele de plural ale cuvintelor din seria:", options: ["aragazuri, baclavale, furtune, macazuri", "aragaze, baclavale, furtune, macazuri", "aragaze, baclavale, furtunuri, macazuri", "aragaze, baclavale, furtunuri, macaze"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 16, chapter: "Genitiv-Dativ", q: "Sunt corecte formele de dativ-genitiv din seria:", options: ["cirezii, grenadei, lânei, petardei", "cirezii, grenadei, lânii, petardei", "ciredei, grenadei, lânei, petardei", "cirezii, grenadei, lânii, petărzii"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 17, chapter: "Verbe", q: "Formele corecte de condițional-optativ ale verbelor se află în seria:", options: ["aș dori, ai veni, ați urâ, ar stabili", "ași dori, ai veni, ați urî, ar stabili", "aș dori, ai venii, ați urî, ar stabili", "aș dori, ai veni, ați urî, ar stabili"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 18, chapter: "Ortografie", q: "Conține numai forme corecte seria:", options: ["loați, giaca, bună voință, veni-ți", "loați, giaca, bunăvoință, veniți", "luați, geaca, bună voință, veniți", "luați, geaca, bunăvoință, veniți"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 19, chapter: "Figuri de Stil", q: "În enunțul 'Frate, frate, dar brânza e pe bani.' apare:", options: ["repetiție", "tautologie", "pleonasm", "enumerație"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 20, chapter: "Vocabular", q: "Sensul potrivit al cuvântului luxurios este:", options: ["luxos", "opulent", "concupiscent", "abundent"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 21, chapter: "Paronime", q: "Cuvântul subliniat este folosit corect în enunțul:", options: ["A fost exprimat un punct de vedere arbitral.", "În urma căzăturii a avut o contuzie la lobul temporar.", "Cutremurul este eminent.", "El este original din Mexic."], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 22, chapter: "Citate Istorice", q: "Mottoul 'Dacă voi nu mă vreți, eu...' se completează cu:", options: ["vă iubesc", "vă vreau", "vă vreu", "vreau"], correct: 2, explain: "Barem oficial ANIMV: Varianta c ('eu vă vreu' - C. Negruzzi)." },
+  { id: 23, chapter: "Antonime", q: "Antonimul cuvântului inextricabil este:", options: ["salvat", "simplu", "stricat", "perfect"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 24, chapter: "Expresii", q: "Cuvântul lipsă din expresia 'a se plimba ca vodă prin...' este:", options: ["grădină", "pădure", "împărăție", "lobodă"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 25, chapter: "Expresii", q: "Sensul expresiei 'a tăia nodul gordian' este:", options: ["a se afla într-o situație dificilă", "a tăia nodul legăturii", "a ieși dintr-o situație dificilă", "a fi ferm"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 26, chapter: "Expresii", q: "Din expresia 'a trage nădejde ca spânul de...' lipsește cuvântul:", options: ["păr", "mustăți", "barbă", "chelie"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 27, chapter: "Sinonime", q: "Sinonimele cuvintelor condescendent, fortuit, recalcitrant, vindicativ sunt corecte în seria:", options: ["superior, forțat, ambițios, vindecător", "amabil, inopinat, refractar, dușmănos", "umil, puternic, perseverent, salvator", "amabil, inopinant, hrănitor, salvator"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 28, chapter: "Omonime", q: "Cuvintele subliniate sunt în relație de omonimie în enunțurile:", options: ["Activitatea este suspendată temporar. / Identificase un indice temporal.", "Condamnații munceau în mine de sare. / Cu mine venise un prieten vechi.", "Nu îi plăcea ritmul de lucru lent. / Ar fi vrut să fie mai alert.", "Calculatorul este bun. / Tortul a fost neașteptat de bun."], correct: 1, explain: "Barem oficial ANIMV: Varianta b (mine substantiv vs mine pronume)." },
+  { id: 29, chapter: "Vocabular", q: "Sensul cuvântului cecitate este:", options: ["penurie", "orbire", "vivacitate", "logoree"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 30, chapter: "Registre", q: "Cuvântul blid aparține registrului:", options: ["popular", "cult", "familiar", "neologic"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 31, chapter: "Expresii", q: "Din expresia 'A-și trage... pe turta sa' lipsește cuvântul:", options: ["spuza", "foloasele", "clapa", "ponoasele"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 32, chapter: "Arhaisme", q: "În secvența 'Amu cică împăratul acela, aproape de bătrânețe, căzând la zăcare, a scris către frățâne-său craiul...', cuvântul subliniat (frățâne-său) este:", options: ["arhaism lexical", "arhaism fonetic", "arhaism morfologic", "arhaism semantic"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 33, chapter: "Formare Cuvinte", q: "Cuvintele subliniate în 'Copacul înflorit își legăna crengile' și 'Auzise el că untdelemnul domolește valurile' s-au format prin:", options: ["derivare, derivare", "derivare, conversiune", "compunere, conversiune", "conversiune, compunere"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 34, chapter: "Expresii", q: "Sensul secvenței 'S-a făcut luntre și punte să ajungă la școală' este:", options: ["a ezitat", "a încercat din răsputeri", "a evitat", "a intenționat"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 35, chapter: "Literatură", q: "Una dintre teoriile susținute de Titu Maiorescu este:", options: ["teoria relativității", "teoria determinismului", "teoria formelor fără fond", "teoria mutației valorilor estetice"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 36, chapter: "Literatură", q: "Teoria sincronismului se leagă de numele lui:", options: ["Mihail Kogălniceanu", "Titu Maiorescu", "Eugen Lovinescu", "George Călinescu"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 37, chapter: "Genuri Literare", q: "Fragmentul 'IONA: Dacă aș avea mijloace, n-aș face nimic altceva decât o bancă de lemn...' prezintă particularități ale textului:", options: ["argumentativ", "dramatic", "explicativ", "publicistic"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 38, chapter: "Estetică", q: "Categoria estetică prezentă în comediile lui I.L. Caragiale este:", options: ["grotescul", "sublimul", "fantasticul", "comicul"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 39, chapter: "Curente Literare", q: "Versurile 'Copacii albi, copacii negri / Stau goi în parcul solitar...' (G. Bacovia) se încadrează în:", options: ["simbolism", "modernism", "romantism", "expresionism"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 40, chapter: "Teorie Literară", q: "Instanțe ale comunicării în textul literar sunt:", options: ["naratorul și personajul", "autorul și criticul literar", "cititorul și dramaturgul", "personajul și jurnalistul"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 41, chapter: "Curente Literare", q: "Trăsături ale realismului în literatură sunt:", options: ["personaje-tip, obiectivitate", "personaje excepționale, obiectivitate", "determinism social, libertatea fanteziei creatoare", "personaje-simbol, veridicitate"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 42, chapter: "Lingvistică", q: "Funcția referențială a limbajului se realizează prin:", options: ["denotație, detalii", "figuri de stil, interjecții", "conotație, ambiguitate", "termeni de specialitate, subiectivitate"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 43, chapter: "Stilistică", q: "Stiluri funcționale ale limbii române sunt:", options: ["colocvial, beletristic", "religios, juridico-administrativ", "jurnalistic, științific", "informativ, oficial"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 44, chapter: "Simbolism", q: "Conține numai trăsături ale simbolismului seria:", options: ["sugestia, muzicalitatea, corespondențele, universul citadin", "sugestia, muzicalitatea, corespondențele, tehnica detaliului", "sugestia, personajul excepțional, corespondențele, universul citadin", "rigoarea, muzicalitatea, corespondențele, universul rural"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 45, chapter: "Istorie Literară", q: "În 'Introducție' la Dacia literară Mihail Kogălniceanu combate abuzul de:", options: ["istorie", "natură", "traduceri", "folclor"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 46, chapter: "Literatură", q: "În opera literară 'Alexandru Lăpușneanul' de C. Negruzzi întâlnim:", options: ["doar elemente romantice", "doar elemente realiste", "elemente romantice și realiste", "elemente clasice, romantice, realiste"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 47, chapter: "Cultură Universală", q: "Seria care conține doar reprezentanți ai iluminismului este:", options: ["Diderot, Voltaire, Montesquieu, Rousseau", "Dumas, Pușkin, Voltaire, Cervantes", "Hugo, Lamartine, Balzac, Rousseau", "Sartre, Zola, Dostoievski, Diderot"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 48, chapter: "Prozodie", q: "În versurile 'Vino-n codrul la izvorul / Care tremură pe prund / Unde prispa cea de brazde / Crengi plecate o ascund' rima este:", options: ["împerecheată", "încrucișată", "îmbrățișată", "variată"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 49, chapter: "Poezie", q: "Versurile 'În orașu-n care plouă de trei ori pe săptămână / Un bătrân și o bătrână... ' prezintă particularități ale liricii:", options: ["romantice", "simboliste", "parnasiene", "neomoderniste"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 50, chapter: "Modernism", q: "Conține numai trăsături ale liricii moderniste seria:", options: ["vers liber, ingambament, intelectualizarea emoției, peisaj bucolic", "vers liber, ingambament, intelectualizarea emoției, ambiguitate", "vers liber, ingambament, rigoare prozodică, ambiguitate", "vers liber, rigoare prozodică, intelectualizarea emoției, cultul strămoșilor"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 51, chapter: "Psihologie", q: "Rezolvarea problemelor foarte complexe prin explorare și descoperire face apel la strategia:", options: ["algoritmică", "analogică", "euristică", "empirică"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 52, chapter: "Psihologie", q: "Faptul că memoria dispune de operatori proprii pentru prelucrări și reorganizări logice denotă caracteristica de a fi:", options: ["activă", "selectivă", "organizată logic", "organizată sistemic"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 53, chapter: "Psihologie", q: "În funcție de prezența efortului depus și a gradului de conștientizare diferențiem formele de atenție:", options: ["involuntară, voluntară și postvoluntară", "internă, externă și expectativă", "contemplare, preocupare și așteptare", "senzorială și intelectuală"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 54, chapter: "Comunicare", q: "În schema de comunicare, emițătorul este reprezentat de:", options: ["sistemul de semne (codul)", "canalul de comunicare", "cel care recepționează mesajul", "cel care produce și transmite mesajul"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 55, chapter: "Psihologie", q: "Deoarece personalitatea nu este înnăscută, putem afirma că aceasta este:", options: ["supusă transformărilor până la vârsta de șapte ani", "produsul împrejurărilor, depinzând de natura și calitatea acestora", "inactivă", "dominată de însușirile biologic-ereditare"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 56, chapter: "Psihologie", q: "Carl Jung propune abordarea temperamentului în funcție de orientare și evidențiază tipurile:", options: ["extravertul și introvertul", "ciclotimul și schizotimul", "instabilul și stabilul", "viscerotonul și somatotonul"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 57, chapter: "Psihologie", q: "După specificul activității solicitante, aptitudinile se clasifică în:", options: ["concrete și abstracte", "empirice și științifice", "speciale și generale", "simple și complexe"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 58, chapter: "Psihologie", q: "Latura orientativă a caracterului este alcătuită din componentele atitudinale:", options: ["cognitivă, motivațională, afectivă", "motivațională, cognitivă, voluntară", "motivațională, afectivă, voluntară", "cognitivă, afectivă, voluntară"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 59, chapter: "Psihologie", q: "Inteligența este o adaptare a organismului la mediu ce presupune:", options: ["o echilibrare între asimilarea și acomodarea de informații", "doar integrarea noilor informații", "o echilibrare între strategiile algoritmice și euristice", "doar restructurarea schemelor"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 60, chapter: "Psihologie", q: "Printre factorii intelectuali implicați în procesul creației putem evidenția:", options: ["factorii aptitudinali", "factorii temperamentali", "factorii de fluență", "factorii motivaționali"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 61, chapter: "Istoria României", q: "Declarația cu privire la poziția PMR în problemele mișcării comuniste a fost elaborată în anii șaizeci:", options: ["1958", "1963", "1964", "1968"], correct: 2, explain: "Barem oficial ANIMV: Varianta c (anul 1964)." },
+  { id: 62, chapter: "Istoria României", q: "În Constituția din 1948 organul reprezentativ suprem s-a numit:", options: ["Marea Adunare Națională", "Consiliul Legislativ", "Consiliul de Stat", "Consiliul de Miniștri"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 63, chapter: "Istoria României", q: "O ideologie politică democratică din perioada interbelică a fost:", options: ["comunismul", "legionarismul", "nazismul", "liberalismul"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 64, chapter: "Istoria României", q: "În perioada 1965-1974 Nicolae Ceaușescu a inițiat măsuri de relativă destindere și deschidere spre:", options: ["Răsărit", "Asia", "Africa", "Occident"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 65, chapter: "Istoria României", q: "Numeroși reprezentanți ai elitei politice și economice interbelice au murit în închisoarea comunistă de la:", options: ["Târgșor", "Suceava", "Fortul 14", "Sighet"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 66, chapter: "Istoria României", q: "României i s-a recunoscut independența în anul 1878 prin:", options: ["Tratatul de la Berlin", "Tratatul de la Paris", "Tratatul de la Moscova", "Tratatul de la Varșovia"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 67, chapter: "Istoria României", q: "După 1989 politica externă a României a avut ca scop integrarea în:", options: ["structurile euroatlantice", "structurile pacifice", "structurile oceanice", "structurile răsăritene"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 68, chapter: "Istoria României", q: "Voievodatele conduse de Gelu, Glad și Menumorut sunt menționate în documentul intitulat:", options: ["Diploma cavalerilor ioaniți", "Gesta Hungarorum", "Alexiada", "Legenda Sfântului Gerard"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 69, chapter: "Istoria României", q: "A întemeiat statul dobrogean la mijlocul secolului al XIV-lea:", options: ["Balica", "Ivanco", "Dimitrie", "Dobrotici"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 70, chapter: "Istoria României", q: "Mihai Viteazul i-a învins pe otomani în lupta de la:", options: ["Putineiu", "Stănești", "Șerpătești", "Călugăreni"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 71, chapter: "Logică", q: "Definiția 'Timpul este hoțul care ne fură bucuria clipei prezente' este:", options: ["îngustă", "neclară", "negativă", "circulară"], correct: 1, explain: "Barem oficial ANIMV: Varianta b (metaforică, neclară)." },
+  { id: 72, chapter: "Logică", q: "Dacă termenului 'sportiv' i se adaugă mențiunea 'de performanță', atunci:", options: ["atât extensiunea, cât și intensiunea rămân neschimbate", "extensiunea se mărește și intensiunea se micșorează", "extensiunea se micșorează și intensiunea se mărește", "ambele se măresc"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 73, chapter: "Logică", q: "Clasificarea locuitorilor unei localități în 'copii și maturi' este:", options: ["incompletă", "cu mai multe criterii", "corectă", "neomogenă"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 74, chapter: "Logică", q: "Contradictoria contrarei propoziției universal afirmative (SaP) este:", options: ["SaP", "SeP", "SiP", "SoP"], correct: 2, explain: "Barem oficial ANIMV: Varianta c (Contrara lui SaP este SeP; contradictoria lui SeP este SiP)." },
+  { id: 75, chapter: "Logică", q: "Obversa propoziției 'Unele autoturisme sunt scumpe' (SiP) este:", options: ["Unele autoturisme nu sunt scumpe.", "Toate autoturismele sunt scumpe.", "Niciun autoturism nu este ieftin.", "Unele autoturisme nu sunt ieftine."], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 76, chapter: "Logică", q: "Raționamentul 'Dacă toți olimpicii sunt elevi silitori, atunci toți elevii silitori sunt olimpici' este:", options: ["corect", "respectă distribuirea", "incorect, deoarece 'elevi silitori' este distribuit în concluzie și nedistribuit în premisă", "incorect pentru olimpic"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 77, chapter: "Logică", q: "Modul silogistic 'iai' este valid în figurile:", options: ["prima și a doua", "prima și a treia", "a treia și a patra", "a doua și a patra"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 78, chapter: "Logică", q: "Fie silogismul: 'Toate mijloacele de transport sunt rapide. Toate autobuzele sunt mijloace de transport. Deci toate autobuzele sunt rapide.' Afirmația corectă este:", options: ["termenii extremi sunt distribuiți", "concluzia este particulară", "predicatul e distribuit în ambele", "termenul mediu este 'mijloace de transport în comun'"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 79, chapter: "Logică", q: "Inducția completă este o argumentare care presupune:", options: ["o concluzie cu caracter probabil", "examinarea unei clase cu număr infinit", "trecerea de la finit la infinit", "o concluzie cu caracter cert"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 80, chapter: "Sofisme", q: "Raționamentul 'Piesa auzită la radio este foarte bună, deoarece toată lumea o ascultă' este:", options: ["un apel la persoană", "un apel la modestie", "un apel la forță", "un apel la popor (Ad Populum)"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 81, chapter: "Economie", q: "Resursele sunt:", options: ["suficiente în raport cu nevoile", "limitate în raport cu nevoile", "nelimitate", "în raport supraunitar"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 82, chapter: "Economie", q: "Utilitatea marginală este:", options: ["zero la prima doză", "minimă la prima doză", "zero la saturație", "negativă la saturație"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 83, chapter: "Economie", q: "Producătorul este purtătorul:", options: ["ofertei de bunuri libere", "doar al ofertei", "ofertei de bunuri economice", "doar al cererii"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 84, chapter: "Economie", q: "Dacă un capital tehnic este de 15.000 u.m., din care o treime este capital fix, capitalul circulant este:", options: ["5000 u.m.", "12000 u.m.", "10000 u.m.", "20000 u.m."], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 85, chapter: "Economie", q: "Firma X produce 6000 tricouri utilizând 5 mașini de cusut. Productivitatea medie a capitalului este:", options: ["1000", "1200", "1300", "30000"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 86, chapter: "Economie", q: "Scopul fundamental al oricărui producător este:", options: ["minimizarea cheltuielilor", "maximizarea profitului", "maximizarea cheltuielilor administrative", "maximizarea producției"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 87, chapter: "Economie", q: "Cererea de bunuri de consum se află într-o relație directă cu:", options: ["prețul de vânzare", "resursele", "veniturile consumatorului", "prețul factorilor"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 88, chapter: "Economie", q: "Piața cu situație de oligopol are drept caracteristică:", options: ["reducerea rolului concurenței prin preț", "atomicitatea ofertei", "omogenitatea produselor", "transparența perfectă"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 89, chapter: "Economie", q: "Printre cauzele care duc la restrângerea masei monetare se numără:", options: ["deficitul bugetar", "scăderea vitezei de rotație a banilor", "creșterea volumului mărfurilor", "convertibilitatea monedei naționale în monedă străină"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 90, chapter: "Economie", q: "Dacă salariul nominal crește mai puțin decât cresc prețurile, salariul real:", options: ["scade", "crește", "crește mai puțin decât prețurile", "scade mai mult decât cel nominal"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." },
+  { id: 91, chapter: "Matematică", q: "Suma primilor zece termeni ai progresiei aritmetice cu primul termen egal cu unitatea și rația doi este:", options: ["zece", "o sută", "o sută doi", "o mie douăzeci și trei"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 92, chapter: "Matematică", q: "Fie rădăcinile ecuației x^2 - 4x + 2 = 0. Suma inverselor rădăcinilor este:", options: ["-4", "-2", "2", "4"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 93, chapter: "Matematică", q: "În xOy se dau A(-1;5), B(3;1). Punctul M pentru care vectorul MB = 3*AM are coordonatele:", options: ["(1;3)", "(2;-2)", "(0;4)", "(4;4)"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 94, chapter: "Matematică", q: "Triunghiul ABC are laturile 5, 12, 13. Raza cercului înscris este:", options: ["13/2", "6", "2", "unitatea"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 95, chapter: "Matematică", q: "Rezultatul calculului log3(3 - 2√2) + log3(3) + log3(3 + 2√2) este:", options: ["zero", "unitatea", "doi", "trei"], correct: 1, explain: "Barem oficial ANIMV: Varianta b." },
+  { id: 96, chapter: "Matematică", q: "Ecuația √(x - 1) = x:", options: ["are soluția zero", "are soluția unitate", "are două soluții reale", "nu are soluții reale"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 97, chapter: "Matematică", q: "Câte numere naturale de două cifre au ambele cifre impare?", options: ["15", "20", "25", "45"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 98, chapter: "Matematică", q: "În sistemul liniar: x - y + z = 3; 2x + y - z = 0; -x + 2y + z = 4, valoarea lui x este:", options: ["zero", "trei", "negativ", "unitatea"], correct: 3, explain: "Barem oficial ANIMV: Varianta d." },
+  { id: 99, chapter: "Matematică", q: "Pentru matricele A = [[1,0],[3,2]] și B = [[0,1],[2,3]], matricea 2A - 3B este:", options: ["[[2,3],[0,5]]", "[[-2,-3],[0,-5]]", "[[2,-3],[0,-5]]", "[[2,3],[0,-5]]"], correct: 2, explain: "Barem oficial ANIMV: Varianta c." },
+  { id: 100, chapter: "Matematică", q: "Rezultatul calculului sin^2(30°) + cos^2(150°) este:", options: ["unitatea", "1/2", "3/2", "3/4"], correct: 0, explain: "Barem oficial ANIMV: Varianta a." }
+];
+
+/* TRACK A, B, C BANKS */
 const QUIZ_BANKS = {
   logic: [
-    { chapter: "Silogisme", level: "Nivel 1 (Bază)", q: "Dacă toți ofițerii de contrainformații sunt discreți, iar niciun indiscret nu are acces la documente clasificate, ce concluzie este indubitabil adevărată?", options: ["Toți oamenii discreți sunt ofițeri de contrainformații.", "Unii ofițeri de contrainformații nu au acces la documente.", "Toți cei care au acces la documente clasificate sunt discreți.", "Accesul la rapoarte secrete este garantat oricărei persoane discrete."], correct: 2, explain: "Conversiune validă: dacă non-discreții nu au acces, rezultă direct că oricine are acces este obligatoriu discret." },
-    { chapter: "Serii Logice", level: "Nivel 1 (Bază)", q: "Identifică următorul termen în secvența criptografică: 4, 11, 25, 53, 109, ...", options: ["218", "225", "209", "221"], correct: 3, explain: "Relația matematică: x_n = (x_{n-1} * 2) + 3. Astfel, (109 * 2) + 3 = 218 + 3 = 221." },
-    { chapter: "Relații Analitice", level: "Nivel 1 (Bază)", q: "Dacă Vlad este mai rapid decât Radu, iar Dan este mai lent decât Vlad, dar mai rapid decât Radu, care este ordinea strict descrescătoare a vitezei?", options: ["Dan, Vlad, Radu", "Vlad, Dan, Radu", "Vlad, Radu, Dan", "Radu, Dan, Vlad"], correct: 1, explain: "Din premise rezultă clar: Vlad > Dan > Radu." },
-    { chapter: "Sofisme & Biasuri", level: "Nivel 2 (Intermediar)", q: "Ce eroare de raționament se manifestă atunci când un analist caută și reține exclusiv informațiile care confirmă ipoteza sa inițială?", options: ["Eroarea omului de paie (Straw Man)", "Biasul de confirmare (Confirmation Bias)", "Apelul la ignoranță (Argumentum ad Ignorantiam)", "Falsa dilemă"], correct: 1, explain: "Biasul de confirmare este tendința de a procesa informația favorizând datele conforme convingerilor anterioare." },
-    { chapter: "Silogisme", level: "Nivel 2 (Intermediar)", q: "Fie premisele: 'Unii martori sunt credibili' și 'Toți agenții sub acoperire sunt credibili'. Putem deduce cu certitudine că unii martori sunt agenți sub acoperire?", options: ["Da, este un silogism valid de figura I.", "Da, dar numai dacă numărul martorilor este par.", "Nu, concluzia nu este validă din punct de vedere deductiv.", "Da, este o deducție universal afirmativă."], correct: 2, explain: "Eroarea termenului mediu nedistribuit: termenul 'credibili' nu este distribuit în nicio premisă, deci nu se poate stabili o legătură de incluziune." },
-    { chapter: "Gândire Critică", level: "Nivel 2 (Intermediar)", q: "Un raport afirmă: 'Majoritatea atacurilor cibernetice recente au vizat servere neactualizate. Prin urmare, actualizarea software-ului elimină complet riscul oricărui atac cibernetic.' Ce eroare logică conține concluzia?", options: ["Atacul la persoană (Ad Hominem).", "Petiția de principiu (Petitio Principii).", "Eroarea diviziunii.", "Confundarea condiției necesare cu cea suficientă."], correct: 3, explain: "Actualizarea este o condiție necesară pentru securitate, dar nu suficientă pentru a garanta invulnerabilitatea totală." },
-    { chapter: "Relații Analitice", level: "Nivel 2 (Intermediar)", q: "Cinci ofițeri (A, B, C, D, E) stau la o masă de analiză circulară. A este direct în fața lui C. B este la dreapta lui A. Cine este obligatoriu între B și C dacă D nu este lângă C?", options: ["D", "E", "A", "Niciunul"], correct: 0, explain: "Poziționarea pe cerc lasă o singură aranjare compatibilă unde D ocupă locul dintre B și C." },
-    { chapter: "Serii Logice", level: "Nivel 2 (Intermediar)", q: "Care este termenul lipsă din secvența: 2, 6, 12, 20, 30, 42, ...?", options: ["54", "56", "58", "60"], correct: 1, explain: "Diferențele cresc cu 2 la fiecare pas (+4, +6, +8, +10, +12, +14). Deci 42 + 14 = 56." },
-    { chapter: "Silogisme", level: "Nivel 3 (Avansat)", q: "Nicio dronă neidentificată nu este autorizată în spațiul aerian securizat. Toate aparatele autorizate transmit transponder codat. Rezultă că:", options: ["Unele drone transmit cod deși sunt neautorizate.", "Niciun aparat care nu transmite cod nu poate fi autorizat.", "Toate aparatele care transmit cod sunt drone.", "Spațiul aerian interzice orice aparat cu elice."], correct: 1, explain: "Dacă 'Toate autorizate -> Transmit cod', prin contrapoziție directă rezultă 'Nu transmite cod -> Nu este autorizat'." },
-    { chapter: "Gândire Critică", level: "Nivel 3 (Avansat)", q: "'Dacă nu ești cu noi în această operațiune, înseamnă că ești împotriva securității naționale.' Această declarație este un exemplu tipic de:", options: ["Post hoc ergo propter hoc", "Apel la compasiune", "Falsă dilemă (Gândire binară forțată)", "Eroare de compoziție"], correct: 2, explain: "Falsa dilemă reduce în mod forțat un spectru complex de opțiuni la două extreme antagonice." },
-    { chapter: "Relații Analitice", level: "Nivel 3 (Avansat)", q: "Într-un grup de agenți, oricine vorbește araba vorbește și persana. Niciun vorbitor de persană nu vorbește rusa. Mihai vorbește araba. Ce concluzie este indubitabilă?", options: ["Mihai vorbește rusa dar nu o folosește.", "Mihai este singurul vorbitor de arabă.", "Toți cei care vorbesc rusa vorbesc persana.", "Mihai nu vorbește rusa."], correct: 3, explain: "Mihai vorbește araba -> vorbește persana. Vorbitorii de persană nu vorbesc rusa -> Mihai nu vorbește rusa." },
-    { chapter: "Sofisme & Biasuri", level: "Nivel 3 (Avansat)", q: "Afirmația: 'Incidentul de securitate a apărut după instalarea noului router. Prin urmare, noul router este cauza breșei de securitate' comite eroarea:", options: ["Post hoc, ergo propter hoc (Cauzalitate falsă din succesiune temporală)", "Ad verecundiam", "Ad populum", "Sofismul accidentului"], correct: 0, explain: "Succesiunea temporală nu demonstrează automat o relație cauză-efect." },
-    { chapter: "Serii Logice", level: "Nivel 3 (Avansat)", q: "Găsește valoarea următoare: 3, 5, 9, 17, 33, ...?", options: ["64", "65", "66", "72"], correct: 1, explain: "Diferențele se dublează la fiecare pas (+2, +4, +8, +16, +32). Astfel 33 + 32 = 65." },
-    { chapter: "Gândire Critică", level: "Nivel 3 (Avansat)", q: "Un ofițer analizează o știre pe rețelele sociale. Care dintre următoarele elemente reprezintă cel mai puternic indicator de dezinformare planificată?", options: ["Utilizarea unei limbi străine în text.", "Prezența termenilor statistici din rapoarte academice.", "Apelul intens la emoții puternice (frică, furie) coroborat cu lipsa surselor verificabile.", "Publicarea în cursul orelor de noapte."], correct: 2, explain: "Dezinformarea mizează pe scurtcircuitarea rațiunii prin reacții emoționale acute și omiterea trasabilității sursei." },
-    { chapter: "Silogisme", level: "Nivel 2 (Intermediar)", q: "Dacă 'Toți X sunt Y' este adevărată, ce se poate spune despre judecata 'Unii X nu sunt Y'?", options: ["Este adevărată.", "Este cert falsă (relație de contradicție în pătratul logic).", "Este probabilă.", "Este nedeterminată."], correct: 1, explain: "În pătratul logic al lui Boethius, propoziția universal afirmativă (A) și particular negativa (O) sunt contradictorii; nu pot fi ambele adevărate." },
-    { chapter: "Relații Analitice", level: "Nivel 2 (Intermediar)", q: "Dacă Andrei are dosarul aprobat, atunci și Bogdan îl are aprobat. Bogdan nu are dosarul aprobat. Ce putem deduce conform regulii Modus Tollens?", options: ["Andrei are dosarul aprobat.", "Ambii au fost respinși din motive medicale.", "Nu se poate trage nicio concluzie.", "Andrei nu are dosarul aprobat."], correct: 3, explain: "Regula Modus Tollens: p -> q; non-q; deci non-p. Andrei nu are dosarul aprobat." },
-    { chapter: "Serii Logice", level: "Nivel 1 (Bază)", q: "Completați analogia: MICROFON este pentru ÎNREGISTRARE așa cum RADAR este pentru:", options: ["DETECȚIE", "TRANSMISIE", "BOMBARDAMENT", "BRIAJ"], correct: 0, explain: "Funcția primară a radarului este detecția și localizarea țintelor." },
-    { chapter: "Gândire Critică", level: "Nivel 2 (Intermediar)", q: "Ce este un argument 'Ad Hominem'?", options: ["Apelul la tradiție pentru susținerea unei legi.", "Respingerea unui argument prin atacarea caracterului sau persoanei care îl susține în loc de combaterea ideii.", "Justificarea unei acțiuni prin faptul că toți o fac.", "Folosirea unei concluzii circulare."], correct: 1, explain: "Ad Hominem atacă direct individul, eludând fondul logic al afirmației." },
-    { chapter: "Silogisme", level: "Nivel 3 (Avansat)", q: "'Toate analizele de intelligence verificate sunt documentate. Nicio bârfă nu este documentată.' Concluzia validă este:", options: ["Unele bârfe sunt documentate indirect.", "Toate documentele sunt analize de intelligence.", "Nicio bârfă nu este o analiză de intelligence verificată.", "Orice analiză verificată conține bârfe."], correct: 2, explain: "Silogism în modul Camestres: Toți A sunt B; Niciun C nu este B; deci Niciun C nu este A." },
-    { chapter: "Sofisme & Biasuri", level: "Nivel 3 (Avansat)", q: "Efectul Dunning-Kruger într-un context de evaluare se referă la:", options: ["Frica patologică de eșec în timpul probelor cronometrate.", "Tendința de a uita codurile numerice sub stres fizic.", "Capacitatea de a memora rapid hărți topografice.", "Tendința persoanelor cu un nivel redus de competență de a-și supraestima masiv abilitățile."], correct: 3, explain: "Efectul Dunning-Kruger este o distorsiune cognitivă în care incompetența împiedică evaluarea corectă a propriei performanțe." }
+    { chapter: "Silogisme", level: "Bază", q: "Dacă toți ofițerii de contrainformații sunt discreți, iar niciun indiscret nu are acces la documente clasificate, ce concluzie este indubitabil adevărată?", options: ["Toți oamenii discreți sunt ofițeri de contrainformații.", "Unii ofițeri de contrainformații nu au acces la documente.", "Toți cei care au acces la documente clasificate sunt discreți.", "Accesul la rapoarte secrete este garantat oricărei persoane discrete."], correct: 2, explain: "Conversiune validă: dacă non-discreții nu au acces, rezultă direct că oricine are acces este obligatoriu discret." },
+    { chapter: "Serii Logice", level: "Bază", q: "Identifică următorul termen în secvența criptografică: 4, 11, 25, 53, 109, ...", options: ["218", "225", "209", "221"], correct: 3, explain: "Relația matematică: (109 * 2) + 3 = 221." },
+    { chapter: "Relații Analitice", level: "Bază", q: "Dacă Vlad este mai rapid decât Radu, iar Dan este mai lent decât Vlad, dar mai rapid decât Radu, care este ordinea strict descrescătoare a vitezei?", options: ["Dan, Vlad, Radu", "Vlad, Dan, Radu", "Vlad, Radu, Dan", "Radu, Dan, Vlad"], correct: 1, explain: "Din premise rezultă clar: Vlad > Dan > Radu." },
+    { chapter: "Sofisme & Biasuri", level: "Intermediar", q: "Ce eroare de raționament se manifestă atunci când un analist caută și reține exclusiv informațiile care confirmă ipoteza sa inițială?", options: ["Eroarea omului de paie (Straw Man)", "Biasul de confirmare (Confirmation Bias)", "Apelul la ignoranță (Argumentum ad Ignorantiam)", "Falsa dilemă"], correct: 1, explain: "Biasul de confirmare este tendința de a favoriza datele conforme convingerilor anterioare." },
+    { chapter: "Silogisme", level: "Intermediar", q: "Fie premisele: 'Unii martori sunt credibili' și 'Toți agenții sub acoperire sunt credibili'. Putem deduce cu certitudine că unii martori sunt agenți sub acoperire?", options: ["Da, este un silogism valid.", "Da, dar numai dacă numărul martorilor este par.", "Nu, concluzia nu este validă din punct de vedere deductiv.", "Da, este o deducție universal afirmativă."], correct: 2, explain: "Eroarea termenului mediu nedistribuit: termenul 'credibili' nu este distribuit în nicio premisă." },
+    { chapter: "Gândire Critică", level: "Intermediar", q: "Un raport afirmă: 'Majoritatea atacurilor cibernetice recente au vizat servere neactualizate. Prin urmare, actualizarea software-ului elimină complet riscul oricărui atac cibernetic.' Ce eroare logică conține concluzia?", options: ["Atacul la persoană (Ad Hominem).", "Petiția de principiu (Petitio Principii).", "Eroarea diviziunii.", "Confundarea condiției necesare cu cea suficientă."], correct: 3, explain: "Actualizarea este o condiție necesară pentru securitate, dar nu suficientă pentru a garanta invulnerabilitatea totală." },
+    { chapter: "Relații Analitice", level: "Intermediar", q: "Cinci ofițeri (A, B, C, D, E) stau la o masă de analiză circulară. A este direct în fața lui C. B este la dreapta lui A. Cine este obligatoriu între B și C dacă D nu este lângă C?", options: ["D", "E", "A", "Niciunul"], correct: 0, explain: "Poziționarea pe cerc lasă o singură aranjare compatibilă unde D ocupă locul dintre B și C." },
+    { chapter: "Serii Logice", level: "Intermediar", q: "Care este termenul lipsă din secvența: 2, 6, 12, 20, 30, 42, ...?", options: ["54", "56", "58", "60"], correct: 1, explain: "Diferențele cresc cu 2 la fiecare pas. 42 + 14 = 56." },
+    { chapter: "Silogisme", level: "Avansat", q: "Nicio dronă neidentificată nu este autorizată în spațiul aerian securizat. Toate aparatele autorizate transmit transponder codat. Rezultă că:", options: ["Unele drone transmit cod deși sunt neautorizate.", "Niciun aparat care nu transmite cod nu poate fi autorizat.", "Toate aparatele care transmit cod sunt drone.", "Spațiul aerian interzice orice aparat cu elice."], correct: 1, explain: "Prin contrapoziție directă rezultă 'Nu transmite cod -> Nu este autorizat'." },
+    { chapter: "Gândire Critică", level: "Avansat", q: "'Dacă nu ești cu noi în această operațiune, înseamnă că ești împotriva securității naționale.' Această declarație este un exemplu tipic de:", options: ["Post hoc ergo propter hoc", "Apel la compasiune", "Falsă dilemă (Gândire binară forțată)", "Eroare de compoziție"], correct: 2, explain: "Falsa dilemă reduce în mod forțat un spectru complex de opțiuni la două extreme antagonice." },
+    { chapter: "Relații Analitice", level: "Avansat", q: "Într-un grup de agenți, oricine vorbește araba vorbește și persana. Niciun vorbitor de persană nu vorbește rusa. Mihai vorbește araba. Ce concluzie este indubitabilă?", options: ["Mihai vorbește rusa dar nu o folosește.", "Mihai este singurul vorbitor de arabă.", "Toți cei care vorbesc rusa vorbesc persana.", "Mihai nu vorbește rusa."], correct: 3, explain: "Mihai vorbește araba -> vorbește persana. Vorbitorii de persană nu vorbesc rusa -> Mihai nu vorbește rusa." },
+    { chapter: "Sofisme & Biasuri", level: "Avansat", q: "Afirmația: 'Incidentul de securitate a apărut după instalarea noului router. Prin urmare, noul router este cauza breșei de securitate' comite eroarea:", options: ["Post hoc, ergo propter hoc", "Ad verecundiam", "Ad populum", "Sofismul accidentului"], correct: 0, explain: "Succesiunea temporală nu demonstrează automat o relație cauză-efect." },
+    { chapter: "Serii Logice", level: "Avansat", q: "Găsește valoarea următoare: 3, 5, 9, 17, 33, ...?", options: ["64", "65", "66", "72"], correct: 1, explain: "Diferențele se dublează la fiecare pas (+2, +4, +8, +16, +32). Astfel 33 + 32 = 65." },
+    { chapter: "Gândire Critică", level: "Avansat", q: "Un ofițer analizează o știre pe rețelele sociale. Care dintre următoarele elemente reprezintă cel mai puternic indicator de dezinformare planificată?", options: ["Utilizarea unei limbi străine în text.", "Prezența termenilor statistici din rapoarte academice.", "Apelul intens la emoții puternice (frică, furie) coroborat cu lipsa surselor verificabile.", "Publicarea în cursul orelor de noapte."], correct: 2, explain: "Dezinformarea mizează pe scurtcircuitarea rațiunii prin reacții emoționale acute." },
+    { chapter: "Silogisme", level: "Intermediar", q: "Dacă 'Toți X sunt Y' este adevărată, ce se poate spune despre judecata 'Unii X nu sunt Y'?", options: ["Este adevărată.", "Este cert falsă (relație de contradicție în pătratul logic).", "Este probabilă.", "Este nedeterminată."], correct: 1, explain: "Universal afirmativa și particular negativa sunt contradictorii." },
+    { chapter: "Relații Analitice", level: "Intermediar", q: "Dacă Andrei are dosarul aprobat, atunci și Bogdan îl are aprobat. Bogdan nu are dosarul aprobat. Ce putem deduce conform regulii Modus Tollens?", options: ["Andrei are dosarul aprobat.", "Ambii au fost respinși din motive medicale.", "Nu se poate trage nicio concluzie.", "Andrei nu are dosarul aprobat."], correct: 3, explain: "Regula Modus Tollens: p -> q; non-q; deci non-p." },
+    { chapter: "Serii Logice", level: "Bază", q: "Completați analogia: MICROFON este pentru ÎNREGISTRARE așa cum RADAR este pentru:", options: ["DETECȚIE", "TRANSMISIE", "BOMBARDAMENT", "BRIAJ"], correct: 0, explain: "Funcția primară a radarului este detecția și localizarea țintelor." },
+    { chapter: "Gândire Critică", level: "Intermediar", q: "Ce este un argument 'Ad Hominem'?", options: ["Apelul la tradiție pentru susținerea unei legi.", "Respingerea unui argument prin atacarea caracterului sau persoanei care îl susține în loc de combaterea ideii.", "Justificarea unei acțiuni prin faptul că toți o fac.", "Folosirea unei concluzii circulare."], correct: 1, explain: "Ad Hominem atacă direct individul, eludând fondul logic al afirmației." },
+    { chapter: "Silogisme", level: "Avansat", q: "'Toate analizele de intelligence verificate sunt documentate. Nicio bârfă nu este documentată.' Concluzia validă este:", options: ["Unele bârfe sunt documentate indirect.", "Toate documentele sunt analize de intelligence.", "Nicio bârfă nu este o analiză de intelligence verificată.", "Orice analiză verificată conține bârfe."], correct: 2, explain: "Silogism în modul Camestres." },
+    { chapter: "Sofisme & Biasuri", level: "Avansat", q: "Efectul Dunning-Kruger într-un context de evaluare se referă la:", options: ["Frica patologică de eșec în timpul probelor cronometrate.", "Tendința de a uita codurile numerice sub stres fizic.", "Capacitatea de a memora rapid hărți topografice.", "Tendința persoanelor cu un nivel redus de competență de a-și supraestima masiv abilitățile."], correct: 3, explain: "Efectul Dunning-Kruger este o distorsiune cognitivă privind propria performanță." }
   ],
   general: [
-    { chapter: "Legislație SRI", level: "Nivel 1 (Bază)", q: "Care este legea organică ce reglementează organizarea și funcționarea Serviciului Român de Informații?", options: ["Legea nr. 51/1991", "Legea nr. 14/1992", "Legea nr. 182/2002", "Legea nr. 80/1995"], correct: 1, explain: "Legea nr. 14/1992 este actul normativ de bază privind atribuțiile și organizarea S.R.I." },
-    { chapter: "Constituția României", level: "Nivel 1 (Bază)", q: "Cine îndeplinește calitatea de Președinte al Consiliului Suprem de Apărare a Țării (CSAT)?", options: ["Prim-ministrul României", "Directorul S.R.I.", "Președintele României", "Ministrul Apărării Naționale"], correct: 2, explain: "Conform art. 119 din Constituția României, Președintele României conduce CSAT, iar Prim-ministrul este vicepreședinte." },
-    { chapter: "Informații Clasificate", level: "Nivel 1 (Bază)", q: "Ce hotărâre de Guvern stabilește Standardele naționale de protecție a informațiilor clasificate în România?", options: ["H.G. nr. 100/1990", "H.G. nr. 781/2002", "H.G. nr. 223/2015", "H.G. nr. 585/2002"], correct: 3, explain: "HG 585/2002 aprobă standardele naționale pentru protecția informațiilor clasificate." },
-    { chapter: "Alianțe Euro-Atlantice", level: "Nivel 1 (Bază)", q: "În ce an a devenit România stat membru cu drepturi depline al NATO?", options: ["2004", "1999", "2007", "2002"], correct: 0, explain: "România a depus instrumentul de ratificare la Washington în martie 2004." },
-    { chapter: "Informații Clasificate", level: "Nivel 2 (Intermediar)", q: "Care sunt cele patru clase de secretizare a informațiilor secrete de stat conform Legii 182/2002?", options: ["Top Secret, Secret, Confidențial, Restrâns", "Strict Secret de Importanță Deosebită, Strict Secret, Secret, Secret de Serviciu", "Militar, Operativ, Administrativ, Public", "Nivel 1, Nivel 2, Nivel 3, Nivel 4"], correct: 1, explain: "Legea 182/2002 împarte informațiile clasificate în secrete de stat (SSID, SS, Secret) și secrete de serviciu." },
-    { chapter: "Securitate Națională", level: "Nivel 2 (Intermediar)", q: "Care este legea-cadru privind securitatea națională a României?", options: ["Legea nr. 14/1992", "Legea nr. 333/2003", "Legea nr. 51/1991", "Legea nr. 53/2003"], correct: 2, explain: "Legea nr. 51/1991 definește amenințările la adresa securității naționale și regimul activităților informative." },
-    { chapter: "Alianțe Euro-Atlantice", level: "Nivel 2 (Intermediar)", q: "Ce prevede în esență Articolul 5 din Tratatul Atlanticului de Nord?", options: ["Bugetul minim de 2% din PIB dedicat achizițiilor de armament.", "Clauza apărării colective: un atac armat împotriva unuia dintre aliați este considerat un atac împotriva tuturor.", "Dreptul de veto al oricărui stat membru în cadrul Consiliului.", "Obligația recrutării obligatorii în caz de criză regională."], correct: 1, explain: "Articolul 5 consfințește principiul fundamental al solidarității și apărării colective NATO." },
-    { chapter: "Terminologie Intelligence", level: "Nivel 2 (Intermediar)", q: "Ce semnifică acronimul HUMINT în limbajul serviciilor de informații?", options: ["Human Intelligence (culegerea informațiilor din surse umane)", "High Universal Military Intelligence Network", "Hostile Units Monitoring and Interception", "Hybrid Urban Mission Intelligence"], correct: 0, explain: "HUMINT desemnează informațiile obținute prin intermediul surselor umane (recrutare, contact direct, interogatoriu)." },
-    { chapter: "Constituția României", level: "Nivel 2 (Intermediar)", q: "Controlul democratic parlamentar asupra activității Serviciului Român de Informații este exercitat de:", options: ["Consiliul Superior al Magistraturii.", "Ministerul Justiției.", "Avocatul Poporului în exclusivitate.", "O comisie comună permanentă a celor două Camere ale Parlamentului."], correct: 3, explain: "Conform legii, activitatea SRI este verificată de Comisia parlamentară specială de control a Camerei Deputaților și Senatului." },
-    { chapter: "Geopolitică & Strategie", level: "Nivel 2 (Intermediar)", q: "Care bazin acvatic limitrof reprezintă nodul strategic prioritar pentru securitatea națională și flancul estic al României?", options: ["Marea Caspică", "Bazinul Mării Negre", "Marea Baltică", "Marea Adriatică"], correct: 1, explain: "Regiunea Mării Negre este recunoscută oficial ca zonă de importanță strategică vitală pentru securitatea euro-atlantică." },
-    { chapter: "Legislație SRI", level: "Nivel 3 (Avansat)", q: "Pot cadrele militare ale Serviciului Român de Informații să facă parte din partide politice?", options: ["Nu, le este strict interzis prin lege să facă parte din partide sau să desfășoare propagandă politică.", "Da, dar numai în timpul liber.", "Da, dar numai ca membri cotizanți fără funcții de conducere.", "Da, cu permisiunea scrisă a directorului."], correct: 0, explain: "Statutul cadrelor militare și Legea 14/1992 interzic categoric apartenența politică sau manifestările partizane." },
-    { chapter: "Informații Clasificate", level: "Nivel 3 (Avansat)", q: "Ce autoritate națională coordonează sistemul de protecție a informațiilor clasificate NATO și UE în România?", options: ["Curtea de Conturi", "Inspectoratul General al Poliției Române", "ORNISS (Oficiul Registrului Național al Informațiilor Secrete de Stat)", "Statul Major al Apărării"], correct: 2, explain: "ORNISS este autoritatea națională de securitate responsabilă de asigurarea protecției informațiilor clasificate." },
-    { chapter: "Securitate Națională", level: "Nivel 3 (Avansat)", q: "Conform Legii 51/1991, mandatele de securitate națională pentru interceptarea comunicațiilor sunt autorizate exclusiv de către:", options: ["Procurorul general al Parchetului Militar", "Un judecător anume desemnat de la Înalta Curte de Casație și Justiție (ÎCCJ)", "Directorul Serviciului Român de Informații", "Președintele CSAT"], correct: 1, explain: "Activitățile specifice care restrâng drepturi se pot derula doar pe baza autorizării emise de un judecător al ÎCCJ." },
-    { chapter: "Terminologie Intelligence", level: "Nivel 2 (Intermediar)", q: "Ce ramură a culegerii de informații este denumită OSINT?", options: ["Operational Satellite Imagery and Navigation Tracking", "Online Secure Information Network", "Optical Surveillance Identification Node", "Open Source Intelligence (informații din surse deschise și publice)"], correct: 3, explain: "OSINT analizează date publice, de la presă și rapoarte comerciale până la baze de date accesibile legal pe internet." },
-    { chapter: "Constituția României", level: "Nivel 1 (Bază)", q: "Care este forma de guvernământ a statului român conform art. 1 din Constituție?", options: ["Monarhie parlamentară", "Republică", "Confederație", "Stat federat"], correct: 1, explain: "Articolul 1 din Constituție statuează: 'Forma de guvernământ a statului român este republica'." },
-    { chapter: "Geopolitică & Strategie", level: "Nivel 3 (Avansat)", q: "Ce înseamnă un 'atac hibrid' în contextul conflictelor moderne?", options: ["Folosirea vehiculelor cu motorizare electrică și termică pe front.", "Un atac naval declanșat simultan din două porturi civile.", "Combinarea mijloacelor convenționale militare cu război cibernetic, dezinformare, presiune economică și sabotaj sub pragul de război deschis.", "O grevă a personalului tehnic din căile ferate."], correct: 2, explain: "Războiul hibrid combină tactici militare și non-militare mascate pentru a destabiliza o țintă fără a declanșa o reacție convențională directă." },
-    { chapter: "Securitate Cibernetică", level: "Nivel 2 (Intermediar)", q: "Care entitate din cadrul SRI are rolul de autoritate națională în domeniul prevenirii și combaterii atacurilor cibernetice împotriva infrastructurilor critice?", options: ["Garda de Coastă", "Directia Pașapoarte", "Centrul Național Cyberint", "Serviciul de Telecomunicații Speciale"], correct: 2, explain: "Centrul Național Cyberint din SRI asigură protecția spațiului cibernetic al infrastructurilor cu valențe de securitate națională." },
-    { chapter: "Alianțe Euro-Atlantice", level: "Nivel 2 (Intermediar)", q: "La ce dată a aderat România la Uniunea Europeană?", options: ["1 mai 2004", "1 ianuarie 2007", "1 decembrie 2000", "1 ianuarie 2010"], correct: 1, explain: "România este stat membru al Uniunii Europene de la 1 ianuarie 2007." },
-    { chapter: "Informații Clasificate", level: "Nivel 3 (Avansat)", q: "Ce nivel de clasificare este atribuit informațiilor a căror divulgare neautorizată poate cauza prejudicii 'de o gravitate excepțională' securității naționale?", options: ["Strict Secret", "Secret", "Secret de Serviciu", "Strict Secret de Importanță Deosebită (SSID)"], correct: 3, explain: "SSID este cel mai înalt nivel de clasificare din legislația românească (echivalent Cosmic Top Secret / Top Secret)." },
-    { chapter: "Legislație SRI", level: "Nivel 1 (Bază)", q: "Cine numește Directorul Serviciului Român de Informații?", options: ["Parlamentul, în ședință comună, la propunerea Președintelui României.", "Consiliul Suprem de Apărare a Țării prin decizie unanimă.", "Guvernul României prin ordonanță de urgență.", "Ministrul Afacerilor Interne."], correct: 0, explain: "Directorul SRI este numit de Parlament la propunerea Președintelui României, după audierea în comisia de specialitate." }
+    { chapter: "Legislație SRI", level: "Bază", q: "Care este legea organică ce reglementează organizarea și funcționarea Serviciului Român de Informații?", options: ["Legea nr. 51/1991", "Legea nr. 14/1992", "Legea nr. 182/2002", "Legea nr. 80/1995"], correct: 1, explain: "Legea nr. 14/1992 este actul normativ de bază privind atribuțiile și organizarea S.R.I." },
+    { chapter: "Constituția României", level: "Bază", q: "Cine îndeplinește calitatea de Președinte al Consiliului Suprem de Apărare a Țării (CSAT)?", options: ["Prim-ministrul României", "Directorul S.R.I.", "Președintele României", "Ministrul Apărării Naționale"], correct: 2, explain: "Președintele României conduce CSAT, iar Prim-ministrul este vicepreședinte." },
+    { chapter: "Informații Clasificate", level: "Bază", q: "Ce hotărâre de Guvern stabilește Standardele naționale de protecție a informațiilor clasificate în România?", options: ["H.G. nr. 100/1990", "H.G. nr. 781/2002", "H.G. nr. 223/2015", "H.G. nr. 585/2002"], correct: 3, explain: "HG 585/2002 aprobă standardele naționale pentru protecția informațiilor clasificate." },
+    { chapter: "Alianțe Euro-Atlantice", level: "Bază", q: "În ce an a devenit România stat membru cu drepturi depline al NATO?", options: ["2004", "1999", "2007", "2002"], correct: 0, explain: "România a depus instrumentul de ratificare la Washington în martie 2004." },
+    { chapter: "Informații Clasificate", level: "Intermediar", q: "Care sunt cele patru clase de secretizare a informațiilor secrete de stat conform Legii 182/2002?", options: ["Top Secret, Secret, Confidențial, Restrâns", "Strict Secret de Importanță Deosebită, Strict Secret, Secret, Secret de Serviciu", "Militar, Operativ, Administrativ, Public", "Clasa A, Clasa B, Clasa C, Clasa D"], correct: 1, explain: "Legea 182/2002 împarte informațiile clasificate în secrete de stat și secrete de serviciu." },
+    { chapter: "Securitate Națională", level: "Intermediar", q: "Care este legea-cadru privind securitatea națională a României?", options: ["Legea nr. 14/1992", "Legea nr. 333/2003", "Legea nr. 51/1991", "Legea nr. 53/2003"], correct: 2, explain: "Legea nr. 51/1991 definește amenințările la adresa securității naționale." },
+    { chapter: "Alianțe Euro-Atlantice", level: "Intermediar", q: "Ce prevede în esență Articolul 5 din Tratatul Atlanticului de Nord?", options: ["Bugetul minim de două procente din PIB dedicat achizițiilor de armament.", "Clauza apărării colective: un atac armat împotriva unuia dintre aliați este considerat un atac împotriva tuturor.", "Dreptul de veto al oricărui stat membru în cadrul Consiliului.", "Obligația recrutării obligatorii în caz de criză regională."], correct: 1, explain: "Articolul 5 consfințește principiul fundamental al solidarității și apărării colective NATO." },
+    { chapter: "Terminologie Intelligence", level: "Intermediar", q: "Ce semnifică acronimul HUMINT în limbajul serviciilor de informații?", options: ["Human Intelligence (culegerea informațiilor din surse umane)", "High Universal Military Intelligence Network", "Hostile Units Monitoring and Interception", "Hybrid Urban Mission Intelligence"], correct: 0, explain: "HUMINT desemnează informațiile obținute prin intermediul surselor umane." },
+    { chapter: "Constituția României", level: "Intermediar", q: "Controlul democratic parlamentar asupra activității Serviciului Român de Informații este exercitat de:", options: ["Consiliul Superior al Magistraturii.", "Ministerul Justiției.", "Avocatul Poporului în exclusivitate.", "O comisie comună permanentă a celor două Camere ale Parlamentului."], correct: 3, explain: "Activitatea SRI este verificată de Comisia parlamentară specială de control." },
+    { chapter: "Geopolitică & Strategie", level: "Intermediar", q: "Care bazin acvatic limitrof reprezintă nodul strategic prioritar pentru securitatea națională și flancul estic al României?", options: ["Marea Caspică", "Bazinul Mării Negre", "Marea Baltică", "Marea Adriatică"], correct: 1, explain: "Regiunea Mării Negre este recunoscută oficial ca zonă de importanță strategică vitală." },
+    { chapter: "Legislație SRI", level: "Avansat", q: "Pot cadrele militare ale Serviciului Român de Informații să facă parte din partide politice?", options: ["Nu, le este strict interzis prin lege să facă parte din partide sau să desfășoare propagandă politică.", "Da, dar numai în timpul liber.", "Da, dar numai ca membri cotizanți fără funcții de conducere.", "Da, cu permisiunea scrisă a conducerii."], correct: 0, explain: "Statutul cadrelor militare și Legea 14/1992 interzic categoric apartenența politică." },
+    { chapter: "Informații Clasificate", level: "Avansat", q: "Ce autoritate națională coordonează sistemul de protecție a informațiilor clasificate NATO și UE în România?", options: ["Curtea de Conturi", "Inspectoratul General al Poliției Române", "ORNISS (Oficiul Registrului Național al Informațiilor Secrete de Stat)", "Statul Major al Apărării"], correct: 2, explain: "ORNISS este autoritatea națională de securitate responsabilă." },
+    { chapter: "Securitate Națională", level: "Avansat", q: "Conform Legii 51/1991, mandatele de securitate națională pentru interceptarea comunicațiilor sunt autorizate exclusiv de către:", options: ["Procurorul general al Parchetului Militar", "Un judecător anume desemnat de la Înalta Curte de Casație și Justiție (ÎCCJ)", "Directorul Serviciului Român de Informații", "Președintele CSAT"], correct: 1, explain: "Activitățile specifice care restrâng drepturi se pot derula doar pe baza autorizării emise de un judecător al ÎCCJ." },
+    { chapter: "Terminologie Intelligence", level: "Intermediar", q: "Ce ramură a culegerii de informații este denumită OSINT?", options: ["Operational Satellite Imagery and Navigation Tracking", "Online Secure Information Network", "Optical Surveillance Identification Node", "Open Source Intelligence (informații din surse deschise și publice)"], correct: 3, explain: "OSINT analizează date publice din ziare, baze de date și rapoarte accesibile legal." },
+    { chapter: "Constituția României", level: "Bază", q: "Care este forma de guvernământ a statului român conform legii fundamentale?", options: ["Monarhie parlamentară", "Republică", "Confederație", "Stat federat"], correct: 1, explain: "Articolul inițial din Constituție statuează: 'Forma de guvernământ a statului român este republica'." },
+    { chapter: "Geopolitică & Strategie", level: "Avansat", q: "Ce înseamnă un 'atac hibrid' în contextul conflictelor moderne?", options: ["Folosirea vehiculelor cu motorizare electrică și termică pe front.", "Un atac naval declanșat simultan din două porturi civile.", "Combinarea mijloacelor convenționale militare cu război cibernetic, dezinformare, presiune economică și sabotaj sub pragul de război deschis.", "O grevă a personalului tehnic din căile ferate."], correct: 2, explain: "Războiul hibrid combină tactici militare și non-militare mascate." },
+    { chapter: "Securitate Cibernetică", level: "Intermediar", q: "Care entitate din cadrul SRI are rolul de autoritate națională în domeniul prevenirii și combaterii atacurilor cibernetice împotriva infrastructurilor critice?", options: ["Garda de Coastă", "Directia Pașapoarte", "Centrul Național Cyberint", "Serviciul de Telecomunicații Speciale"], correct: 2, explain: "Centrul Național Cyberint din SRI asigură protecția spațiului cibernetic." },
+    { chapter: "Alianțe Euro-Atlantice", level: "Intermediar", q: "În ce an a aderat România la Uniunea Europeană?", options: ["2004", "2007", "2000", "2010"], correct: 1, explain: "România este stat membru al Uniunii Europene de la începutul anului 2007." },
+    { chapter: "Informații Clasificate", level: "Avansat", q: "Ce nivel de clasificare este atribuit informațiilor a căror divulgare neautorizată poate cauza prejudicii 'de o gravitate excepțională' securității naționale?", options: ["Strict Secret", "Secret", "Secret de Serviciu", "Strict Secret de Importanță Deosebită (SSID)"], correct: 3, explain: "SSID este cel mai înalt nivel de clasificare din legislația românească." },
+    { chapter: "Legislație SRI", level: "Bază", q: "Cine numește Directorul Serviciului Român de Informații?", options: ["Parlamentul, în ședință comună, la propunerea Președintelui României.", "Consiliul Suprem de Apărare a Țării prin decizie unanimă.", "Guvernul României prin ordonanță de urgență.", "Ministrul Afacerilor Interne."], correct: 0, explain: "Directorul SRI este numit de Parlament la propunerea Președintelui României." }
   ],
   english: [
-    { chapter: "Past Deductions & Modals", level: "Nivel 1 (Bază)", q: "Select the sentence with the appropriate modal verb expressing certainty about the past: 'The operative was seen in Bucharest yesterday; he _______ in London at the exact same hour.'", options: ["must have been", "couldn't have been", "shouldn't be", "might not be"], correct: 1, explain: "'Couldn't have been' expresses impossible past actions based on solid contrary evidence." },
-    { chapter: "Tense Concord", level: "Nivel 1 (Bază)", q: "Complete the sentence: 'By the time the briefing started, the intelligence analyst _______ all satellite images.'", options: ["has already processed", "already processed", "had already processed", "was already process"], correct: 2, explain: "Past Perfect is mandatory for an action finished before another point in the past ('started')." },
-    { chapter: "Passive Voice", level: "Nivel 1 (Bază)", q: "Choose the correct passive form: 'The suspect was relieved because no formal charges _______ against him.'", options: ["are brought", "had bring", "have brought", "were brought"], correct: 3, explain: "Standard past passive: 'were brought' matches the plural subject 'charges' in a past timeline." },
-    { chapter: "Conditionals", level: "Nivel 2 (Intermediar)", q: "Identify the correct conditional: 'If the counter-intelligence unit _______ the breach earlier, confidential files would not have leaked.'", options: ["had detected", "detected", "would detect", "has detected"], correct: 0, explain: "Third conditional formula: 'If' + Past Perfect ('had detected') -> 'would have' + past participle." },
-    { chapter: "Inversion", level: "Nivel 2 (Intermediar)", q: "Choose the inverted sentence structure: 'Seldom _______ such sophisticated malware in corporate networks.'", options: ["cybersecurity officers have encountered", "have cybersecurity officers encountered", "encountered cybersecurity officers", "have encountered cybersecurity officers"], correct: 1, explain: "Negative adverbs (seldom, rarely, hardly) placed at the beginning trigger subject-auxiliary inversion." },
-    { chapter: "Vocabulary & Context", level: "Nivel 2 (Intermediar)", q: "In an intelligence context, the antonym for 'COVERT OPERATION' is:", options: ["Clandestine operation", "Tactical retreat", "Overt operation", "Intermittent radar"], correct: 2, explain: "'Overt' means open and acknowledged, whereas 'covert' means hidden or disguised." },
-    { chapter: "Idiomatic Usage", level: "Nivel 2 (Intermediar)", q: "Choose the exact preposition: 'The newly commissioned cadet was sworn _______ secrecy during the induction ceremony.'", options: ["at", "for", "with", "to"], correct: 3, explain: "The established institutional idiom is 'to be sworn to secrecy'." },
-    { chapter: "Vocabulary & False Friends", level: "Nivel 2 (Intermediar)", q: "Select the sentence where the word 'INTELLIGENCE' is used correctly in an official report:", options: ["Actionable intelligence was shared with international counter-terrorism partners.", "Many intelligences were gathered during the field mission.", "The intelligence are arriving at the regional station tomorrow.", "An intelligence were dispatched immediately."], correct: 0, explain: "'Intelligence' in the meaning of classified information is uncountable and takes singular verbs." },
-    { chapter: "Reported Speech", level: "Nivel 2 (Intermediar)", q: "'Where did you store the encrypted drive?' -> The director asked the officer _______ the encrypted drive.", options: ["where had he stored", "where he had stored", "where did he stored", "where has he stored"], correct: 1, explain: "In reported wh-questions, the word order becomes affirmative (subject before verb) and the tense shifts back." },
-    { chapter: "Vocabulary & Context", level: "Nivel 3 (Avansat)", q: "What does the term 'DISINFORMATION' denote compared to 'MISINFORMATION'?", options: ["Unintentional factual inaccuracies caused by honest mistakes.", "Classified transmissions decoded without government approval.", "Deliberately fabricated falsehoods spread with intentional malicious intent.", "Outdated statistical records in an archive."], correct: 2, explain: "Disinformation is deliberately deceptive, while misinformation is false info spread without malicious intent." },
-    { chapter: "Inversion", level: "Nivel 3 (Avansat)", q: "Complete the sentence with correct inversion: 'Under no circumstances _______ classified blueprints outside the secure perimeter.'", options: ["personnel should remove", "personnel must to remove", "should personnel remove", "removed personnel"], correct: 2, explain: "'Under no circumstances' at the front requires modal inversion: auxiliary + subject + main verb." },
-    { chapter: "Subjunctive & Formal Register", level: "Nivel 3 (Avansat)", q: "Choose the formally correct structure: 'The commanding general insisted that every cadet _______ the emergency drill.'", options: ["attends", "attend", "attended to", "is attending"], correct: 1, explain: "The mandative subjunctive requires the base form of the verb ('attend') regardless of the third-person subject." },
-    { chapter: "Past Deductions & Modals", level: "Nivel 3 (Avansat)", q: "The vault door was unlocked from the inside. The intruder _______ the master passcode.", options: ["should have known", "ought to know", "can't have known", "must have known"], correct: 3, explain: "'Must have known' is used for a deduction where all physical clues point to a logical certainty." },
-    { chapter: "Vocabulary & Context", level: "Nivel 2 (Intermediar)", q: "What is the meaning of the investigative idiom 'RED HERRING'?", options: ["A misleading clue designed to divert attention from the genuine threat.", "An emergency distress code sent from a maritime border.", "A designated high-value target in a hostile country.", "A confidential file marked for immediate destruction."], correct: 0, explain: "A 'red herring' is something intended to distract from relevant questions or authentic evidence." },
-    { chapter: "Conditionals", level: "Nivel 3 (Avansat)", q: "Mixed conditional: 'If he had received formal military training in high school, he _______ the tactical test right now.'", options: ["would have passed", "would pass", "passed", "will pass"], correct: 1, explain: "Past condition ('had received') with present result ('right now') takes 'would' + base verb." },
-    { chapter: "Vocabulary & False Friends", level: "Nivel 2 (Intermediar)", q: "Choose the proper verb: 'The analyst managed to _______ the intercepted radio communication.'", options: ["deceive", "disintegrate", "decipher", "defraud"], correct: 2, explain: "'To decipher' means to convert coded text or obscure signals into understandable language." },
-    { chapter: "Passive Voice", level: "Nivel 2 (Intermediar)", q: "Select the sentence with accurate passive construction: 'It is reported that the surveillance equipment _______ during the transport.'", options: ["has compromised", "were compromise", "was compromised", "had compromise"], correct: 2, explain: "Surveillance equipment is uncountable singular, requiring 'was compromised'." },
-    { chapter: "Idiomatic Usage", level: "Nivel 2 (Intermediar)", q: "To act 'under the radar' means to:", options: ["Fly an aircraft strictly above 10,000 feet.", "Disclose personal details to the media.", "Refuse to execute a commanding officer's orders.", "Operate inconspicuously without attracting public notice."], correct: 3, explain: "'Under the radar' is an established idiom for going undetected." },
-    { chapter: "Tense Concord", level: "Nivel 1 (Bază)", q: "Choose the correct phrase: 'Hardly had the alarm sounded when the rapid intervention force _______.'", options: ["arrived", "had arrived", "has arrived", "was arrived"], correct: 0, explain: "The correlative structure 'Hardly had... when' connects a past perfect clause with a simple past clause ('arrived')." },
-    { chapter: "Vocabulary & Context", level: "Nivel 3 (Avansat)", q: "The term 'SURVEILLANCE' refers to:", options: ["The permanent confiscation of unauthorized weaponry.", "Close observation of a person, group, or location under operational suspicion.", "A formal diplomatic negotiation between sovereign states.", "The psychological examination of cadets before graduation."], correct: 1, explain: "'Surveillance' is the continuous monitoring of behavior, activities, or information for intelligence gathering." }
-  ]
+    { chapter: "Past Deductions", level: "Bază", q: "Select the sentence with the appropriate modal verb expressing certainty about the past: 'The operative was seen in Bucharest yesterday; he _______ in London at the exact same hour.'", options: ["must have been", "couldn't have been", "shouldn't be", "might not be"], correct: 1, explain: "'Couldn't have been' expresses impossible past actions based on solid contrary evidence." },
+    { chapter: "Tense Concord", level: "Bază", q: "Complete the sentence: 'By the time the briefing started, the intelligence analyst _______ all satellite images.'", options: ["has already processed", "already processed", "had already processed", "was already process"], correct: 2, explain: "Past Perfect is mandatory for an action finished before another point in the past ('started')." },
+    { chapter: "Passive Voice", level: "Bază", q: "Choose the correct passive form: 'The suspect was relieved because no formal charges _______ against him.'", options: ["are brought", "had bring", "have brought", "were brought"], correct: 3, explain: "Standard past passive: 'were brought' matches the plural subject 'charges'." },
+    { chapter: "Conditionals", level: "Intermediar", q: "Identify the correct conditional: 'If the counter-intelligence unit _______ the breach earlier, confidential files would not have leaked.'", options: ["had detected", "detected", "would detect", "has detected"], correct: 0, explain: "Third conditional formula: 'If' + Past Perfect -> 'would have' + past participle." },
+    { chapter: "Inversion", level: "Intermediar", q: "Choose the inverted sentence structure: 'Seldom _______ such sophisticated malware in corporate networks.'", options: ["cybersecurity officers have encountered", "have cybersecurity officers encountered", "encountered cybersecurity officers", "have encountered cybersecurity officers"], correct: 1, explain: "Negative adverbs placed at the beginning trigger subject-auxiliary inversion." },
+    { chapter: "Vocabulary", level: "Intermediar", q: "In an intelligence context, the antonym for 'COVERT OPERATION' is:", options: ["Clandestine operation", "Tactical retreat", "Overt operation", "Intermittent radar"], correct: 2, explain: "'Overt' means open and acknowledged, whereas 'covert' means hidden or disguised." },
+    { chapter: "Idiomatic Usage", level: "Intermediar", q: "Choose the exact preposition: 'The newly commissioned cadet was sworn _______ secrecy during the induction ceremony.'", options: ["at", "for", "with", "to"], correct: 3, explain: "The established institutional idiom is 'to be sworn to secrecy'." },
+    { chapter: "False Friends", level: "Intermediar", q: "Select the sentence where the word 'INTELLIGENCE' is used correctly in an official report:", options: ["Actionable intelligence was shared with international counter-terrorism partners.", "Many intelligences were gathered during the field mission.", "The intelligence are arriving at the regional station tomorrow.", "An intelligence were dispatched immediately."], correct: 0, explain: "'Intelligence' in the meaning of classified information is uncountable and takes singular verbs." },
+    { chapter: "Reported Speech", level: "Intermediar", q: "'Where did you store the encrypted drive?' -> The director asked the officer _______ the encrypted drive.", options: ["where had he stored", "where he had stored", "where did he stored", "where has he stored"], correct: 1, explain: "In reported wh-questions, the word order becomes affirmative and the tense shifts back." },
+    { chapter: "Vocabulary", level: "Avansat", q: "What does the term 'DISINFORMATION' denote compared to 'MISINFORMATION'?", options: ["Unintentional factual inaccuracies caused by honest mistakes.", "Classified transmissions decoded without government approval.", "Deliberately fabricated falsehoods spread with intentional malicious intent.", "Outdated statistical records in an archive."], correct: 2, explain: "Disinformation is deliberately deceptive, while misinformation is false info spread without malicious intent." },
+    { chapter: "Inversion", level: "Avansat", q: "Complete the sentence with correct inversion: 'Under no circumstances _______ classified blueprints outside the secure perimeter.'", options: ["personnel should remove", "personnel must to remove", "should personnel remove", "removed personnel"], correct: 2, explain: "'Under no circumstances' at the front requires modal inversion: auxiliary + subject + main verb." },
+    { chapter: "Subjunctive", level: "Avansat", q: "Choose the formally correct structure: 'The commanding general insisted that every cadet _______ the emergency drill.'", options: ["attends", "attend", "attended to", "is attending"], correct: 1, explain: "The mandative subjunctive requires the base form of the verb ('attend')." },
+    { chapter: "Past Deductions", level: "Avansat", q: "The vault door was unlocked from the inside. The intruder _______ the master passcode.", options: ["should have known", "ought to know", "can't have known", "must have known"], correct: 3, explain: "'Must have known' is used for a deduction where all physical clues point to a logical certainty." },
+    { chapter: "Vocabulary", level: "Intermediar", q: "What is the meaning of the investigative idiom 'RED HERRING'?", options: ["A misleading clue designed to divert attention from the genuine threat.", "An emergency distress code sent from a maritime border.", "A designated high-value target in a hostile country.", "A confidential file marked for immediate destruction."], correct: 0, explain: "A 'red herring' is something intended to distract from relevant questions or authentic evidence." },
+    { chapter: "Conditionals", level: "Avansat", q: "Mixed conditional: 'If he had received formal military training in high school, he _______ the tactical test right now.'", options: ["would have passed", "would pass", "passed", "will pass"], correct: 1, explain: "Past condition with present result takes 'would' + base verb." },
+    { chapter: "False Friends", level: "Intermediar", q: "Choose the proper verb: 'The analyst managed to _______ the intercepted radio communication.'", options: ["deceive", "disintegrate", "decipher", "defraud"], correct: 2, explain: "'To decipher' means to convert coded text or obscure signals into understandable language." },
+    { chapter: "Passive Voice", level: "Intermediar", q: "Select the sentence with accurate passive construction: 'It is reported that the surveillance equipment _______ during the transport.'", options: ["has compromised", "were compromise", "was compromised", "had compromise"], correct: 2, explain: "Surveillance equipment is uncountable singular, requiring 'was compromised'." },
+    { chapter: "Idiomatic Usage", level: "Intermediar", q: "To act 'under the radar' means to:", options: ["Fly an aircraft strictly at high altitude.", "Disclose personal details to the media.", "Refuse to execute a commanding officer's orders.", "Operate inconspicuously without attracting public notice."], correct: 3, explain: "'Under the radar' is an established idiom for going undetected." },
+    { chapter: "Tense Concord", level: "Bază", q: "Choose the correct phrase: 'Hardly had the alarm sounded when the rapid intervention force _______.'", options: ["arrived", "had arrived", "has arrived", "was arrived"], correct: 0, explain: "The correlative structure 'Hardly had... when' connects a past perfect clause with a simple past clause ('arrived')." },
+    { chapter: "Vocabulary", level: "Avansat", q: "The term 'SURVEILLANCE' refers to:", options: ["The permanent confiscation of unauthorized weaponry.", "Close observation of a person, group, or location under operational suspicion.", "A formal diplomatic negotiation between sovereign states.", "The psychological examination of cadets before graduation."], correct: 1, explain: "'Surveillance' is the continuous monitoring of behavior, activities, or information for intelligence gathering." }
+  ],
+  cultura_generala: OFFICIAL_CULTURA_RAW
 };
 
 const FAQ_ITEMS = [
@@ -1159,7 +1271,7 @@ function saveStored(key, data) {
 let appState = {
   elig: loadStored("elig", {}),
   docs: loadStored("docs", {}),
-  simScores: loadStored("scores_v6", { logic: null, general: null, english: null, aptitudini_v1: null, aptitudini_v3: null })
+  simScores: loadStored("scores_v8", { logic: null, general: null, english: null, cultura_generala: null, aptitudini_v1: null, aptitudini_v3: null })
 };
 
 function initTabs() {
@@ -1208,32 +1320,32 @@ function updateReadiness() {
   const eligText = document.getElementById("cockpitEligText");
   if (eligBar && eligText) {
     eligBar.style.width = `${eligPct}%`;
-    eligText.textContent = `${eligCount} / ${ELIGIBILITY_DATA.length} Validate`;
+    eligText.textContent = `${eligCount} Validate`;
   }
 
   const docsBar = document.getElementById("cockpitDocsBar");
   const docsText = document.getElementById("cockpitDocsText");
   if (docsBar && docsText) {
     docsBar.style.width = `${docsPct}%`;
-    docsText.textContent = `${docsCount} / ${DOSAR_ITEMS.length} Pregătite`;
+    docsText.textContent = `${docsCount} Pregătite`;
   }
 
   const simBar = document.getElementById("cockpitSimBar");
   const simText = document.getElementById("cockpitSimScore");
   if (simBar && simText) {
     simBar.style.width = `${quizPct}%`;
-    simText.textContent = scores.length > 0 ? `${quizPct}% (${scores.length}/5 Module)` : "Netestat";
+    simText.textContent = scores.length > 0 ? `${quizPct}% (${scores.length} Module)` : "Netestat";
   }
 
   const eligBadge = document.getElementById("eligBadgeStatus");
   if (eligBadge) {
-    eligBadge.textContent = eligCount === ELIGIBILITY_DATA.length ? "CONFORM" : `${eligCount}/${ELIGIBILITY_DATA.length} BIFATE`;
+    eligBadge.textContent = eligCount === ELIGIBILITY_DATA.length ? "CONFORM" : `${eligCount} BIFATE`;
     eligBadge.style.color = eligCount === ELIGIBILITY_DATA.length ? "var(--emerald)" : "var(--cyan)";
   }
 
   const docsBadge = document.getElementById("docsBadgeStatus");
   if (docsBadge) {
-    docsBadge.textContent = docsCount === DOSAR_ITEMS.length ? "DOSAR COMPLET" : `${docsCount}/${DOSAR_ITEMS.length} GATA`;
+    docsBadge.textContent = docsCount === DOSAR_ITEMS.length ? "DOSAR COMPLET" : `${docsCount} GATA`;
   }
 }
 
@@ -1358,6 +1470,7 @@ function selectTrack(trackId) {
   currentTrack = trackId;
   currentFilter = "ALL";
   currentQIndex = 0;
+  timerSeconds = (trackId === "cultura_generala") ? 5400 : 1800;
   document.querySelectorAll(".track-btn").forEach(btn => {
     btn.classList.toggle("active", btn.getAttribute("data-track") === trackId);
   });
@@ -1368,7 +1481,7 @@ function getFilteredQuestions() {
   const bank = QUIZ_BANKS[currentTrack];
   if (!bank) return [];
   if (currentFilter === "ALL") return bank;
-  return bank.filter(q => q.chapter === currentFilter || q.level.includes(currentFilter));
+  return bank.filter(q => q.chapter === currentFilter || (q.level && q.level.includes(currentFilter)));
 }
 
 function renderSim() {
@@ -1403,19 +1516,26 @@ function renderSim() {
 
   const chapters = ["ALL", ...new Set(QUIZ_BANKS[currentTrack].map(item => item.chapter))];
 
+  const trackBadgeNames = {
+    logic: "TRACK A: RAȚIONAMENT LOGIC",
+    general: "TRACK B: SECURITATE & CONSTITUȚIE",
+    english: "TRACK C: LIMBA ENGLEZĂ",
+    cultura_generala: "TRACK F: CULTURĂ GENERALĂ (OFICIAL)"
+  };
+
   container.innerHTML = `
     <div class="sim-control-bar">
       <div>
-        <span class="badge-tag" style="margin-right:0.6rem;">${currentTrack.toUpperCase()}</span>
+        <span class="badge-tag" style="margin-right:0.6rem;">${trackBadgeNames[currentTrack] || currentTrack.toUpperCase()}</span>
         <span class="mono" style="font-size:0.8rem; color:var(--text-muted);">
-          ÎNTREBAREA ${currentQIndex + 1} DIN ${questions.length} (TOTAL BANCĂ: 20)
+          SESIUNE EVALUARE
         </span>
       </div>
-      <div class="timer-pill" id="simTimerDisplay">TIMP SIMULARE: 30:00</div>
+      <div class="timer-pill" id="simTimerDisplay">CRONOMETRU TACTIC</div>
     </div>
 
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.6rem;">
-      <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim);">FILTRARE CAPITOL:</span>
+      <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-dim);">FILTRARE DOMENIU:</span>
       <div class="chapter-filter-pills">
         ${chapters.map(ch => `
           <button class="filter-pill ${currentFilter === ch ? 'active' : ''}" onclick="applyFilter('${ch}')">
@@ -1425,18 +1545,14 @@ function renderSim() {
       </div>
     </div>
 
-    <!-- Question Grid Jumper with Color Feedback -->
+    <!-- Question Grid Jumper -->
     <div class="q-jumper-row">
       ${questions.map((item, idx) => {
         const oIdx = QUIZ_BANKS[currentTrack].indexOf(item);
         const ans = userAnswers[currentTrack][oIdx];
         let statusCls = "";
         if (ans !== null) {
-          if (ans === item.correct) {
-            statusCls = "answered-correct";
-          } else {
-            statusCls = "answered-incorrect";
-          }
+          statusCls = (ans === item.correct) ? "answered-correct" : "answered-incorrect";
         }
         return `
           <div class="q-dot ${idx === currentQIndex ? 'active' : ''} ${statusCls}" onclick="jumpToQ(${idx})">
@@ -1447,8 +1563,8 @@ function renderSim() {
     </div>
 
     <div class="sim-q-meta">
-      <span class="sim-q-tag">${q.chapter} // ${q.level}</span>
-      <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">ANIMV PROTOCOL ID: #2026-${originalIndex + 1}</span>
+      <span class="sim-q-tag">${q.chapter} ${q.level ? '// ' + q.level : ''}</span>
+      <span class="mono" style="font-size:0.75rem; color:var(--text-dim);">ANIMV PROTOCOL ID: #EVAL-${originalIndex + 1}</span>
     </div>
 
     <h3 class="sim-q-title">${q.q}</h3>
@@ -1540,7 +1656,7 @@ function startTimer() {
       const min = Math.floor(timerSeconds / 60);
       const sec = timerSeconds % 60;
       const el = document.getElementById("simTimerDisplay");
-      if (el) el.textContent = `TIMP SIMULARE: ${min}:${sec < 10 ? '0' : ''}${sec}`;
+      if (el) el.textContent = `TIMP: ${min}:${sec < 10 ? '0' : ''}${sec}`;
     } else {
       clearInterval(simTimer);
       simTimer = null;
@@ -1556,7 +1672,7 @@ function finishSim() {
   const grade = ((correct / fullBank.length) * 9 + 1).toFixed(2);
 
   appState.simScores[currentTrack] = correct;
-  saveStored("scores_v6", appState.simScores);
+  saveStored("scores_v8", appState.simScores);
   updateReadiness();
 
   container.innerHTML = `
@@ -1571,26 +1687,25 @@ function finishSim() {
           ? "Rezultat conform cerințelor ANIMV. Profilul tău se încadrează peste pragul de admitere." 
           : "Punctaj sub pragul recomandat de departajare (7.00). Revizuiește capitolele din filtru și reia simularea."}
       </p>
-      <div style="display:flex; justify-content:center; gap:0.8rem;">
+      <div style="display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap;">
         <button class="btn btn-cyan" onclick="resetTrack('${currentTrack}')">Reia Bateria de Teste</button>
-        <button class="btn btn-outline" onclick="selectTrack('aptitudini_v1')">Deschide Proba de Operațiuni (Track E)</button>
+        <button class="btn btn-outline" onclick="selectTrack('cultura_generala')">Simulează Proba de Cultură Generală (Track F)</button>
       </div>
     </div>
   `;
 }
 
 function resetTrack(track) {
-  shuffleQuestionOptions(QUIZ_BANKS[track]);
+  if (track !== "cultura_generala") {
+    shuffleQuestionOptions(QUIZ_BANKS[track]);
+  }
   userAnswers[track] = new Array(QUIZ_BANKS[track].length).fill(null);
   currentQIndex = 0;
-  timerSeconds = 1800;
+  timerSeconds = (track === "cultura_generala") ? 5400 : 1800;
   renderSim();
 }
 
-/* ============================================================
-   TRACK E: VARIANTA 1 (OPERAȚIUNI DE INTELLIGENCE 2025)
-   ============================================================ */
-
+/* TRACK E: OPERAȚIUNI DE INTELLIGENCE */
 let currentDossierV1Tab = "text1";
 
 function renderAptitudiniV1Track(container) {
@@ -1598,14 +1713,14 @@ function renderAptitudiniV1Track(container) {
     <div class="sim-control-bar">
       <div>
         <span class="badge-tag" style="background:var(--cyan-subtle); border-color:var(--cyan); color:var(--cyan);">
-          TRACK E: PROBA 2 OFICIALĂ · OPERAȚIUNI DE INTELLIGENCE
+          TRACK E: PROBA OFICIALĂ · OPERAȚIUNI DE INTELLIGENCE
         </span>
         <span class="mono" style="margin-left:0.6rem; font-size:0.8rem; color:var(--text-muted);">
-          CONCURS LICENȚĂ ANIMV · SESIUNEA IULIE 2025 · VARIANTA 1
+          CONCURS LICENȚĂ ANIMV · VARIANTA INITIALA
         </span>
       </div>
       <div class="timer-pill" style="color:var(--emerald); border-color:rgba(0,229,133,0.3); background:var(--emerald-subtle);">
-        TOTAL: 10 PUNCTE (1P OFICIU)
+        NOTARE OFICIALĂ
       </div>
     </div>
 
@@ -1614,12 +1729,12 @@ function renderAptitudiniV1Track(container) {
         <span class="mono" style="font-size:0.75rem; color:var(--cyan); font-weight:700;">
           DOSAR OPERATIV: EVALUARE PROFIL PSIHOCOMPORTAMENTAL & SOCIAL MEDIA
         </span>
-        <span style="font-size:0.72rem; color:var(--text-muted);">2 TEXTE EXTINSE DE CONCURS</span>
+        <span style="font-size:0.72rem; color:var(--text-muted);">DOCUMENTE DE CONCURS</span>
       </div>
       
       <div class="dossier-nav">
-        <button class="dossier-btn ${currentDossierV1Tab === 'text1' ? 'active' : ''}" onclick="switchDossierV1('text1')">Subiectul I: Cazul Green'n Eco (7 Membri)</button>
-        <button class="dossier-btn ${currentDossierV1Tab === 'text2' ? 'active' : ''}" onclick="switchDossierV1('text2')">Subiectul II: Sănătatea Mintală & Social Media</button>
+        <button class="dossier-btn ${currentDossierV1Tab === 'text1' ? 'active' : ''}" onclick="switchDossierV1('text1')">Secțiunea Principală: Cazul Green'n Eco (7 Membri)</button>
+        <button class="dossier-btn ${currentDossierV1Tab === 'text2' ? 'active' : ''}" onclick="switchDossierV1('text2')">Secțiunea Secundară: Sănătatea Mintală & Social Media</button>
       </div>
 
       <div class="dossier-box">
@@ -1631,18 +1746,18 @@ function renderAptitudiniV1Track(container) {
     <div style="display:flex; flex-direction:column; gap:1.4rem;">
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1.2rem; border-radius:var(--radius);">
         <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
-          <h4 style="font-size:0.95rem; color:#fff;">1.A. IDENTIFICARE LIDER PROIECT (3 PUNCTE)</h4>
+          <h4 style="font-size:0.95rem; color:#fff;">CERINȚA A: IDENTIFICARE LIDER PROIECT</h4>
           <span class="mono" style="font-size:0.75rem; color:var(--cyan);">MAX. 400 CUVINTE</span>
         </div>
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">
-          Identificați cea mai potrivită persoană pentru coordonarea aplicației „Managementul resurselor regenerabile” (2p) și evidențiați 4 criterii (1p)[cite: 3].
+          Identificați cea mai potrivită persoană pentru coordonarea aplicației „Managementul resurselor regenerabile” și evidențiați patru criterii[cite: 3].
         </p>
         <textarea rows="4" placeholder="Argumentați alegerea Elenei în baza abilităților de organizare, control, planificare și a conștientizării inflexibilității..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px; margin-bottom:0.6rem;"></textarea>
       </div>
 
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1.2rem; border-radius:var(--radius);">
         <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <h4 style="font-size:0.95rem; color:#fff;">1.B. CEA MAI PUȚIN POTRIVITĂ PERSOANĂ PENTRU PREȘEDINȚIE (2 PUNCTE)</h4>
+          <h4 style="font-size:0.95rem; color:#fff;">CERINȚA B: CEA MAI PUȚIN POTRIVITĂ PERSOANĂ PENTRU PREȘEDINȚIE</h4>
           <span class="mono" style="font-size:0.75rem; color:var(--gold);">MAX. 300 CUVINTE</span>
         </div>
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">
@@ -1653,21 +1768,21 @@ function renderAptitudiniV1Track(container) {
 
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1.2rem; border-radius:var(--radius);">
         <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <h4 style="font-size:0.95rem; color:#fff;">1.2. SCRISOARE DE INTENȚIE (1 PUNCT)</h4>
+          <h4 style="font-size:0.95rem; color:#fff;">CERINȚA C: SCRISOARE DE INTENȚIE</h4>
           <span class="mono" style="font-size:0.75rem; color:var(--cyan);">MAX. 300 CUVINTE</span>
         </div>
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">
           Redactați scrisoarea de intenție în numele Elenei, adresată comitetului organizației[cite: 3].
         </p>
-        <textarea rows="4" placeholder="Formulați structura completă: formulă de adresare, motivul candidaturii, competențe relevante (calcul amprentă de carbon, organizare), asumarea limitelor personale..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px;"></textarea>
+        <textarea rows="4" placeholder="Formulați structura completă: formulă de adresare, motivul candidaturii, competențe relevante, asumarea limitelor personale..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px;"></textarea>
       </div>
 
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1.2rem; border-radius:var(--radius);">
-        <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">SUBIECTUL II: EFECTE SOCIAL MEDIA & MĂSURI EDUCAȚIE (3 PUNCTE)</h4>
+        <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">SUBIECTUL SECUNDAR: EFECTE SOCIAL MEDIA & MĂSURI EDUCAȚIE</h4>
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">
-          • Trei efecte negative explicate (0,90p / max. 300 cuvinte)[cite: 3]<br>
-          • Trei efecte pozitive explicate (0,90p / max. 300 cuvinte)[cite: 3]<br>
-          • Patru măsuri din perspectiva sistemului național de educație (1,20p / max. 300 cuvinte)[cite: 3]
+          • Trei efecte negative explicate (max. 300 cuvinte)[cite: 3]<br>
+          • Trei efecte pozitive explicate (max. 300 cuvinte)[cite: 3]<br>
+          • Patru măsuri din perspectiva sistemului național de educație (max. 300 cuvinte)[cite: 3]
         </p>
         <textarea rows="4" placeholder="Notați răspunsurile sintetizate conform reperelor textului..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px;"></textarea>
       </div>
@@ -1675,19 +1790,19 @@ function renderAptitudiniV1Track(container) {
 
     <div class="barem-accordion">
       <h4 onclick="toggleBaremV1()">
-        <span>BAREM OFICIAL DE CORECTARE ANIMV (VARIANTA 1 - DESCHIDE)</span>
+        <span>BAREM OFICIAL DE CORECTARE ANIMV (DESCHIDE)</span>
         <span id="baremV1ToggleIcon">+</span>
       </h4>
       <div class="barem-body" id="baremV1Body">
-        <strong style="color:var(--cyan); display:block; margin-bottom:0.4rem;">1.A. COORDONATOR PROIECT: ELENA (0,5p persoană + 1p criterii + 1,5p argumentare)[cite: 3]</strong>
+        <strong style="color:var(--cyan); display:block; margin-bottom:0.4rem;">COORDONATOR PROIECT: ELENA[cite: 3]</strong>
         <p style="margin-bottom:0.6rem;">
           Criterii oficiale: planificare riguroasă, coordonare echipe interdisciplinare, orientare spre rezultate pe termen lung, asumarea și conștientizarea limitelor (gestionează inflexibilitatea prin sport)[cite: 3].
         </p>
-        <strong style="color:var(--cyan); display:block; margin-bottom:0.4rem;">1.B. INCOMPATIBIL PREȘEDINȚIE: MIHAI (0,5p persoană + 1,5p argumentare)[cite: 3]</strong>
+        <strong style="color:var(--cyan); display:block; margin-bottom:0.4rem;">INCOMPATIBIL PREȘEDINȚIE: MIHAI[cite: 3]</strong>
         <p style="margin-bottom:0.6rem;">
           Motive: izolare socială progresivă, atitudine de superioritate față de colegi, nerăbdare în comunicarea cu non-specialiștii, incapacitate de mediere a factorului uman comunitar[cite: 3].
         </p>
-        <strong style="color:var(--cyan); display:block; margin-bottom:0.4rem;">SUBIECTUL II: MĂSURI SISTEM EDUCAȚIONAL[cite: 3]</strong>
+        <strong style="color:var(--cyan); display:block; margin-bottom:0.4rem;">MĂSURI SISTEM EDUCAȚIONAL[cite: 3]</strong>
         <ul style="margin-left:1.4rem; font-size:0.85rem; line-height:1.6;">
           <li>Dezvoltarea gândirii critice pentru evaluarea surselor din online[cite: 3].</li>
           <li>Limitarea timpului petrecut pe ecrane și promovarea activităților alternative fizice[cite: 3].</li>
@@ -1715,10 +1830,7 @@ function toggleBaremV1() {
   icon.textContent = isOpen ? "−" : "+";
 }
 
-/* ============================================================
-   TRACK F: VARIANTA 3 (STUDII DE SECURITATE 2025)
-   ============================================================ */
-
+/* TRACK G: STUDII DE SECURITATE (DEEPSEEK) */
 let currentDossierV3Tab = "info1";
 
 function renderAptitudiniV3Track(container) {
@@ -1726,14 +1838,14 @@ function renderAptitudiniV3Track(container) {
     <div class="sim-control-bar">
       <div>
         <span class="badge-tag" style="background:var(--gold-subtle); border-color:var(--gold); color:var(--gold);">
-          TRACK F: PROBA 2 OFICIALĂ · STUDII DE SECURITATE ȘI INFORMAȚII
+          TRACK G: STUDII DE SECURITATE ȘI INFORMAȚII
         </span>
         <span class="mono" style="margin-left:0.6rem; font-size:0.8rem; color:var(--text-muted);">
-          CONCURS LICENȚĂ ANIMV · SESIUNEA IULIE 2025 · VARIANTA 3
+          CONCURS LICENȚĂ ANIMV · VARIANTA SPECIALĂ
         </span>
       </div>
       <div class="timer-pill" style="color:var(--emerald); border-color:rgba(0,229,133,0.3); background:var(--emerald-subtle);">
-        TOTAL: 10 PUNCTE (1P OFICIU)
+        NOTARE OFICIALĂ
       </div>
     </div>
 
@@ -1742,91 +1854,91 @@ function renderAptitudiniV3Track(container) {
         <span class="mono" style="font-size:0.75rem; color:var(--gold); font-weight:700;">
           DOSAR INFORMATIV: CAZUL DEEPSEEK & SECURITATEA TEHNOLOGICĂ
         </span>
-        <span style="font-size:0.72rem; color:var(--text-muted);">5 TEXTE OFICIALE SURSĂ</span>
+        <span style="font-size:0.72rem; color:var(--text-muted);">DOCUMENTE SURSĂ</span>
       </div>
       
       <div class="dossier-nav" id="dossierV3Nav">
-        <button class="dossier-btn ${currentDossierV3Tab === 'info1' ? 'active' : ''}" onclick="switchDossierV3('info1')">Info 1: SUA & Nvidia</button>
-        <button class="dossier-btn ${currentDossierV3Tab === 'info2' ? 'active' : ''}" onclick="switchDossierV3('info2')">Info 2: Germania & Italia</button>
-        <button class="dossier-btn ${currentDossierV3Tab === 'info3' ? 'active' : ''}" onclick="switchDossierV3('info3')">Info 3: OpenAI & Distilare</button>
-        <button class="dossier-btn ${currentDossierV3Tab === 'info4' ? 'active' : ''}" onclick="switchDossierV3('info4')">Info 4: Modelul R1</button>
-        <button class="dossier-btn ${currentDossierV3Tab === 'info5' ? 'active' : ''}" onclick="switchDossierV3('info5')">Info 5: Coreea de Sud</button>
+        <button class="dossier-btn ${currentDossierV3Tab === 'info1' ? 'active' : ''}" onclick="switchDossierV3('info1')">Doc A: SUA & Nvidia</button>
+        <button class="dossier-btn ${currentDossierV3Tab === 'info2' ? 'active' : ''}" onclick="switchDossierV3('info2')">Doc B: Germania & Italia</button>
+        <button class="dossier-btn ${currentDossierV3Tab === 'info3' ? 'active' : ''}" onclick="switchDossierV3('info3')">Doc C: OpenAI & Distilare</button>
+        <button class="dossier-btn ${currentDossierV3Tab === 'info4' ? 'active' : ''}" onclick="switchDossierV3('info4')">Doc D: Modelul R1</button>
+        <button class="dossier-btn ${currentDossierV3Tab === 'info5' ? 'active' : ''}" onclick="switchDossierV3('info5')">Doc E: Coreea de Sud</button>
       </div>
 
       <div class="dossier-box">
-        <h4 style="color:#fff; font-size:0.95rem; margin-bottom:0.4rem;" id="dossierV3Title">${TRACK_F_DOSSIER[currentDossierV3Tab].title}</h4>
-        <p class="dossier-content" id="dossierV3Content">${TRACK_F_DOSSIER[currentDossierV3Tab].content}</p>
+        <h4 style="color:#fff; font-size:0.95rem; margin-bottom:0.4rem;" id="dossierV3Title">${TRACK_G_DOSSIER[currentDossierV3Tab].title}</h4>
+        <p class="dossier-content" id="dossierV3Content">${TRACK_G_DOSSIER[currentDossierV3Tab].content}</p>
       </div>
     </div>
 
     <div style="display:flex; flex-direction:column; gap:1.4rem;">
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1.2rem; border-radius:var(--radius);">
         <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
-          <h4 style="font-size:0.95rem; color:#fff;">1. CRONOLOGIE OPERATIVĂ (2,30 PUNCTE)</h4>
-          <span class="mono" style="font-size:0.75rem; color:var(--cyan);">MAX. 10 CUVINTE / EVENIMENT</span>
+          <h4 style="font-size:0.95rem; color:#fff;">CERINȚA A: CRONOLOGIE OPERATIVĂ</h4>
+          <span class="mono" style="font-size:0.75rem; color:var(--cyan);">MAX. ZECE CUVINTE / EVENIMENT</span>
         </div>
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">
-          Extrageți și ordonați cronologic cele 8 evenimente din texte[cite: 2].
+          Extrageți și ordonați cronologic cele opt evenimente din texte[cite: 2].
         </p>
         <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0.6rem;">
-          <input type="text" placeholder="1. 15 ianuarie 2025 - ..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
-          <input type="text" placeholder="2. 20 ianuarie 2025 - ..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
-          <input type="text" placeholder="3. 27 ianuarie 2025 - ..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
-          <input type="text" placeholder="4. 29 ianuarie 2025 - ..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
-          <input type="text" placeholder="5. 17 februarie 2025 - ..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
-          <input type="text" placeholder="6. 10 aprilie 2025 - ..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
-          <input type="text" placeholder="7. 24 aprilie 2025 - ..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
-          <input type="text" placeholder="8. 6 mai 2025 - ..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
+          <input type="text" placeholder="Lansarea DeepSeek în Coreea de Sud..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
+          <input type="text" placeholder="DeepSeek lansează versiunea actualizată R1..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
+          <input type="text" placeholder="DeepSeek declanșează vânzări de acțiuni tehnologice..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
+          <input type="text" placeholder="Italia demarează inițiativa privind blocarea procesării datelor..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
+          <input type="text" placeholder="Coreea de Sud suspendă descărcările aplicației DeepSeek..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
+          <input type="text" placeholder="DeepSeek susține că a blocat transferul de conținut..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
+          <input type="text" placeholder="Coreea de Sud declară transferul ilegal de date..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
+          <input type="text" placeholder="Germania notifică oficial DeepSeek să retragă aplicația..." style="background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.4rem 0.6rem; font-family:var(--font-mono); font-size:0.8rem; border-radius:2px;">
         </div>
       </div>
 
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1.2rem; border-radius:var(--radius);">
-        <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">2 & 4. IDENTIFICARE RISCURI & MĂSURI (1,70 PUNCTE)</h4>
+        <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">CERINȚA B: IDENTIFICARE RISCURI & MĂSURI</h4>
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.8rem;">
-          Formulați 4 efecte negative (riscuri) generate de situațiile prezentate și alegeți unul pentru care precizați două măsuri motivate de reducere[cite: 2].
+          Formulați patru efecte negative (riscuri) generate de situațiile prezentate și alegeți unul pentru care precizați două măsuri motivate de reducere[cite: 2].
         </p>
-        <textarea rows="3" placeholder="Scrie aici cele 4 riscuri identificate..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px; margin-bottom:0.6rem;"></textarea>
+        <textarea rows="3" placeholder="Scrie aici riscurile identificate..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px; margin-bottom:0.6rem;"></textarea>
       </div>
 
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1.2rem; border-radius:var(--radius);">
         <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <h4 style="font-size:0.95rem; color:#fff;">3. SCENARIU PROSPECTIV DE INTELLIGENCE (1 PUNCT)</h4>
-          <span class="mono" id="scenarioWordCount" style="font-size:0.75rem; color:var(--gold);">0 / 100 CUVINTE</span>
+          <h4 style="font-size:0.95rem; color:#fff;">CERINȚA C: SCENARIU PROSPECTIV DE INTELLIGENCE</h4>
+          <span class="mono" id="scenarioWordCount" style="font-size:0.75rem; color:var(--gold);">CUVINTE NUMĂRATE</span>
         </div>
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">
-          Redactați un scenariu de <strong>maximum 100 de cuvinte</strong> care să includă: 2 cauze, modul concret de manifestare a riscului și evoluția probabilă a IA[cite: 2].
+          Redactați un scenariu concis care să includă: două cauze, modul concret de manifestare a riscului și evoluția probabilă a IA[cite: 2].
         </p>
         <textarea id="scenarioInput" rows="4" placeholder="Exemplu: Riscul escaladării tensiunilor militare..." oninput="countScenarioWords()" style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px;"></textarea>
       </div>
 
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1.2rem; border-radius:var(--radius);">
-        <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">SUBIECTUL II: SINTEZĂ & INTERVIU COMISIA EUROPEANĂ (3 PUNCTE)</h4>
+        <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">SUBIECTUL SECUNDAR: SINTEZĂ & INTERVIU COMISIA EUROPEANĂ</h4>
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">
-          1. Redactați o sinteză de 200-250 de cuvinte cu 4 idei principale și titlu de maximum 10 cuvinte (1,80p)[cite: 2].<br>
-          2. Formulați 6 întrebări pentru Virginia Dignum (High-Level Expert Group on AI - Comisia Europeană) privind DeepSeek în UE (1,20p)[cite: 2].
+          • Redactați o sinteză concisă cu patru idei principale[cite: 2].<br>
+          • Formulați șase întrebări pentru Virginia Dignum (High-Level Expert Group on AI - Comisia Europeană)[cite: 2].
         </p>
-        <textarea rows="3" placeholder="1. Titlu & Sinteză analitică..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px; margin-bottom:0.6rem;"></textarea>
-        <textarea rows="3" placeholder="2. Cele 6 întrebări strategice..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px;"></textarea>
+        <textarea rows="3" placeholder="Sinteză analitică..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px; margin-bottom:0.6rem;"></textarea>
+        <textarea rows="3" placeholder="Întrebările strategice..." style="width:100%; background:var(--bg-base); border:1px solid var(--border-subtle); color:#fff; padding:0.6rem; font-family:var(--font-body); font-size:0.85rem; border-radius:2px;"></textarea>
       </div>
     </div>
 
     <div class="barem-accordion">
       <h4 onclick="toggleBaremV3()">
-        <span>BAREM OFICIAL DE CORECTARE ANIMV (VARIANTA 3 - DESCHIDE)</span>
+        <span>BAREM OFICIAL DE CORECTARE ANIMV (DESCHIDE)</span>
         <span id="baremV3ToggleIcon">+</span>
       </h4>
       <div class="barem-body" id="baremV3Body">
         <strong style="color:var(--gold); display:block; margin-bottom:0.4rem;">CRONOLOGIE VALIDATĂ ÎN BAREM[cite: 2]:</strong>
-        <ol style="margin-left:1.4rem; margin-bottom:1rem; font-family:var(--font-mono); font-size:0.8rem; line-height:1.7;">
-          <li>15 ianuarie 2025 - Lansarea DeepSeek în Coreea de Sud[cite: 2]</li>
-          <li>20 ianuarie 2025 - DeepSeek lansează versiunea actualizată R1[cite: 2]</li>
-          <li>27 ianuarie 2025 - DeepSeek declanșează vânzări de acțiuni tehnologice[cite: 2]</li>
-          <li>29 ianuarie 2025 - Italia demarează inițiativa privind blocarea procesării datelor[cite: 2]</li>
-          <li>17 februarie 2025 - Coreea de Sud suspendă descărcările aplicației DeepSeek[cite: 2]</li>
-          <li>10 aprilie 2025 - DeepSeek susține că a blocat transferul de conținut[cite: 2]</li>
-          <li>24 aprilie 2025 - Coreea de Sud declară transferul ilegal de date[cite: 2]</li>
-          <li>6 mai 2025 - Germania notifică oficial DeepSeek să retragă aplicația[cite: 2]</li>
-        </ol>
+        <ul style="margin-left:1.4rem; margin-bottom:1rem; font-family:var(--font-mono); font-size:0.8rem; line-height:1.7;">
+          <li>Lansarea DeepSeek în Coreea de Sud[cite: 2]</li>
+          <li>DeepSeek lansează versiunea actualizată R1[cite: 2]</li>
+          <li>DeepSeek declanșează vânzări de acțiuni tehnologice[cite: 2]</li>
+          <li>Italia demarează inițiativa privind blocarea procesării datelor[cite: 2]</li>
+          <li>Coreea de Sud suspendă descărcările aplicației DeepSeek[cite: 2]</li>
+          <li>DeepSeek susține că a blocat transferul de conținut[cite: 2]</li>
+          <li>Coreea de Sud declară transferul ilegal de date[cite: 2]</li>
+          <li>Germania notifică oficial DeepSeek să retragă aplicația[cite: 2]</li>
+        </ul>
 
         <strong style="color:var(--gold); display:block; margin-bottom:0.4rem;">RISCURI DE SECURITATE ACCEPTATE ÎN BAREM[cite: 2]:</strong>
         <ul style="margin-left:1.4rem; font-size:0.85rem; line-height:1.6;">
@@ -1842,8 +1954,8 @@ function renderAptitudiniV3Track(container) {
 
 function switchDossierV3(tabKey) {
   currentDossierV3Tab = tabKey;
-  document.getElementById("dossierV3Title").textContent = TRACK_F_DOSSIER[tabKey].title;
-  document.getElementById("dossierV3Content").textContent = TRACK_F_DOSSIER[tabKey].content;
+  document.getElementById("dossierV3Title").textContent = TRACK_G_DOSSIER[tabKey].title;
+  document.getElementById("dossierV3Content").textContent = TRACK_G_DOSSIER[tabKey].content;
   document.querySelectorAll("#dossierV3Nav button").forEach((btn, idx) => {
     const keys = ["info1", "info2", "info3", "info4", "info5"];
     btn.classList.toggle("active", keys[idx] === tabKey);
@@ -1854,10 +1966,10 @@ function countScenarioWords() {
   const text = document.getElementById("scenarioInput").value.trim();
   const words = text ? text.split(/\s+/).length : 0;
   const countEl = document.getElementById("scenarioWordCount");
-  countEl.textContent = `${words} / 100 CUVINTE`;
+  countEl.textContent = `${words} CUVINTE`;
   if (words > 100) {
     countEl.style.color = "var(--crimson)";
-    countEl.textContent += " (DEPĂȘIRE BAREM -0.20P)";
+    countEl.textContent += " (DEPĂȘIRE LIMITĂ)";
   } else {
     countEl.style.color = "var(--gold)";
   }
@@ -1877,36 +1989,36 @@ function renderPhysicalTrack(container) {
         <span class="badge-tag">CIRCUITUL MILITAR APLICATIV (ANIMV / MAPN)</span>
         <span class="mono" style="margin-left:0.6rem; font-size:0.8rem; color:var(--gold);">PROBĂ SPORTIVĂ ELIMINATORIE</span>
       </div>
-      <div class="timer-pill">BAREM PROMOVAT: MINIM NOTA 5.00</div>
+      <div class="timer-pill">BAREM PROMOVAT</div>
     </div>
 
     <p style="font-size:0.92rem; color:var(--text-main); margin-bottom:1.2rem;">
-      Traseul militar aplicativ conține 11 elemente tehnice succesive într-o sală de sport sau poligon și testează viteza, rezistența musculară și forța explozivă.
+      Traseul militar aplicativ conține elemente tehnice succesive într-o sală de sport sau poligon și testează viteza, rezistența musculară și forța explozivă.
     </p>
 
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius);">
-        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">1. SĂRITURA ÎN LUNGIME</strong>
+        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">SĂRITURA ÎN LUNGIME</strong>
         <span style="font-size:0.82rem; color:var(--text-muted);">De pe loc, aterizare stabilă fără cădere în spate.</span>
       </div>
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius);">
-        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">2. ARUNCAREA MINGILOR</strong>
+        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">ARUNCAREA MINGILOR</strong>
         <span style="font-size:0.82rem; color:var(--text-muted);">Aruncarea mingii de handbal la țintă fixă la perete.</span>
       </div>
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius);">
-        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">3. TRANSPORT GREUTĂȚI</strong>
-        <span style="font-size:0.82rem; color:var(--text-muted);">Slalom cu 2 greutăți (2x15kg băieți / 2x10kg fete).</span>
+        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">TRANSPORT GREUTĂȚI</strong>
+        <span style="font-size:0.82rem; color:var(--text-muted);">Slalom cu greutăți etalon.</span>
       </div>
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius);">
-        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">4. TÂRÂȘ PRIN TUNEL</strong>
+        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">TÂRÂȘ PRIN TUNEL</strong>
         <span style="font-size:0.82rem; color:var(--text-muted);">Deplasare joasă sub plasa tactică fără atingere.</span>
       </div>
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius);">
-        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">5. TRECERE BÂRNĂ</strong>
+        <strong style="color:var(--cyan); display:block; font-size:0.88rem; margin-bottom:0.2rem;">TRECERE BÂRNĂ</strong>
         <span style="font-size:0.82rem; color:var(--text-muted);">Echilibru în alergare pe bârna de gimnastică.</span>
       </div>
       <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius);">
-        <strong style="color:var(--emerald); display:block; font-size:0.88rem; margin-bottom:0.2rem;">6. SPRINT FINIȘ 25M</strong>
+        <strong style="color:var(--emerald); display:block; font-size:0.88rem; margin-bottom:0.2rem;">SPRINT FINIȘ</strong>
         <span style="font-size:0.82rem; color:var(--text-muted);">Accelerare maximă prin celula fotoelectrică.</span>
       </div>
     </div>
@@ -1975,7 +2087,7 @@ function calculatePhysicalGrade() {
     display.textContent = `NOTA ESTIMATĂ: ${grade.toFixed(1)} (ADMIS)`;
     display.style.color = "var(--emerald)";
   } else {
-    display.textContent = `TIMP DEPĂȘIT: NOTA 4.0 (RESPINS)`;
+    display.textContent = `TIMP DEPĂȘIT: RESPINS`;
     display.style.color = "var(--crimson)";
   }
 }
@@ -2039,7 +2151,7 @@ function renderResources() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  Object.keys(QUIZ_BANKS).forEach(k => shuffleQuestionOptions(QUIZ_BANKS[k]));
+  ["logic", "general", "english"].forEach(k => shuffleQuestionOptions(QUIZ_BANKS[k]));
 
   initTabs();
   renderEligibility();
